@@ -1,6 +1,7 @@
 $color-primary: #F1CDB3;
 $color-primary-light: #FDDCC4;
 
+$color-dark-3xl: #292929;
 $color-dark-xl: #4C4C4C;
 $color-dark-l: #545454;
 $color-dark-s: #CDCDCD;
@@ -54,6 +55,37 @@ body {
 	min-height: 100vh;
 }
 
+.button {
+	color: $color-dark-3xl;
+	border-radius: 100px;
+	font-size: map-get($font-sizes, button);
+	line-height: map-get($line-heights, medium);
+	letter-spacing: map-get($letter-spacings, medium);
+	padding: 15px 45px;
+	border: none;
+	outline: none;
+	transition: 0.5s;
+
+	&:hover {
+		background-color: $color-primary-light;
+		cursor: pointer;
+	}
+}
+
+.button_colored {
+	background-color: $color-primary
+}
+
+.button_bordered {
+	background: none;
+	outline: 2px solid $color-primary;
+	outline-offset: -2px;
+
+	&:hover {
+		outline: 2px solid $color-primary-light;
+	}
+}
+
 .header {
 
 	&__container {
@@ -72,20 +104,37 @@ body {
 		font-size: map-get($font-sizes, logo-title);
 		line-height: map-get($line-heights, small);
 		letter-spacing: map-get($letter-spacings, small);
+
+
+		&_light {
+			color: $color-primary;
+		}
+
+		&_dark {
+			color: $color-dark-l;
+		}
 	}
 
 	&__subtitle {
-		color: $color-light-xl;
 		font-family: map-get($font-families, paragraph);
 		font-size: map-get($font-sizes, logo-subtitle);
 		line-height: 13px;
 		letter-spacing: map-get($letter-spacings, medium);
 		padding-top: 10px;
 		padding-left: 5px;
+
+		&_light {
+			color: $color-light-xl;
+		}
+
+		&_dark {
+			color: $color-dark-3xl;
+		}
 	}
 
 	&__link {
 		text-decoration: none;
+		transition: 0.5s;
 
 		&:hover {
 			cursor: pointer;
@@ -106,28 +155,43 @@ body {
 
 	&__link {
 		text-decoration: none;
-		color: $color-dark-s;
 		font-family: map-get($font-families, paragraph);
 		font-size: map-get($font-sizes, paragraph-l);
 		line-height: map-get($line-heights, large);
 		padding-bottom: 5px;
-		transition: 0.5ms;
+		transition-duration: 0.3s;
+		transition-property: color;
 
 		&:hover {
-			color: $color-light-s;
 			cursor: pointer;
 		}
 
 		&:active {
-			color: $color-light-s;
 			border-bottom: 3px solid $color-primary ;
-			cursor: none;
 		}
 
 		&:focus {
-			color: $color-light-s;
 			border-bottom: 3px solid $color-primary ;
-			cursor: none;
+		}
+
+		&_light {
+			color: $color-dark-s;
+
+			&:hover {
+				color: $color-light-s;
+			}
+
+			&:active {
+				color: $color-light-s;
+			}
+		}
+
+		&_dark {
+			color: $color-dark-l;
+
+			&:hover {
+				color: $color-dark-3xl;
+			}
 		}
 	}
 
@@ -136,20 +200,6 @@ body {
 		flex-wrap: wrap;
 		align-items: center;
 	}
-}
-
-.button {
-	border-radius: 100px;
-	font-size: map-get($font-sizes, button);
-	line-height: map-get($line-heights, medium);
-	letter-spacing: map-get($letter-spacings, medium);
-	padding: 15px 45px;
-	border: none;
-	outline: none;
-}
-
-.button_colored {
-	background-color: $color-primary
 }
 
 .header-2 {
