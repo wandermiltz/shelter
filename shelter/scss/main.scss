@@ -18,6 +18,7 @@ $font-sizes: (
 	"header-5": 15px,
 	"paragraph-l": 15px,
 	"paragraph-s": 12px,
+	"button": 17px,
 	"modal": 15px
 );
 
@@ -26,8 +27,15 @@ $font-families: (
 	"paragraph": ('Arial', sans-serif)
 );
 
-$font-weights: (
-	"regular": 400
+$line-heights: (
+	"small": 110%,
+	"medium": 130%,
+	"large": 160%
+);
+
+$letter-spacings: (
+	"small": 0.06em,
+	"medium": 0.1em,
 );
 
 .wrapper {
@@ -61,23 +69,28 @@ body {
 	&__title {
 		color: $color-primary;
 		font-family: map-get($font-families, header);
-		font-weight: map-get($font-weights, regular);
 		font-size: map-get($font-sizes, logo-title);
-		letter-spacing: 0.06em;
+		line-height: map-get($line-heights, small);
+		letter-spacing: map-get($letter-spacings, small);
 	}
 
 	&__subtitle {
 		color: $color-light-xl;
 		font-family: map-get($font-families, paragraph);
-		font-weight: map-get($font-weights, regular);
 		font-size: map-get($font-sizes, logo-subtitle);
-		letter-spacing: 0.1em;
-		padding-top: 8px;
+		line-height: 13px;
+		letter-spacing: map-get($letter-spacings, medium);
+		padding-top: 10px;
 		padding-left: 5px;
 	}
 
 	&__link {
 		text-decoration: none;
+
+		&:hover {
+			cursor: pointer;
+			text-shadow: 0 0 20px $color-primary;
+		}
 	}
 }
 
@@ -94,10 +107,11 @@ body {
 	&__link {
 		text-decoration: none;
 		color: $color-dark-s;
-		font-weight: map-get($font-weights, regular);
 		font-family: map-get($font-families, paragraph);
 		font-size: map-get($font-sizes, paragraph-l);
+		line-height: map-get($line-heights, large);
 		padding-bottom: 5px;
+		transition: 0.5ms;
 
 		&:hover {
 			color: $color-light-s;
@@ -109,6 +123,12 @@ body {
 			border-bottom: 3px solid $color-primary ;
 			cursor: none;
 		}
+
+		&:focus {
+			color: $color-light-s;
+			border-bottom: 3px solid $color-primary ;
+			cursor: none;
+		}
 	}
 
 	&__list {
@@ -116,4 +136,64 @@ body {
 		flex-wrap: wrap;
 		align-items: center;
 	}
+}
+
+.button {
+	border-radius: 100px;
+	font-size: map-get($font-sizes, button);
+	line-height: map-get($line-heights, medium);
+	letter-spacing: map-get($letter-spacings, medium);
+	padding: 15px 45px;
+	border: none;
+	outline: none;
+}
+
+.button_colored {
+	background-color: $color-primary
+}
+
+.header-2 {
+	color: $color-light-xl;
+	font-family: map-get($font-families, header);
+	font-size: map-get($font-sizes, header-2);
+	line-height: map-get($line-heights, medium);
+}
+
+.paragraph-l {
+	color: $color-dark-s;
+	font-family: map-get($font-families, paragraph);
+	font-size: map-get($font-sizes, paragraph-l);
+	line-height: map-get($line-heights, large);
+}
+
+.layout-2-col {
+	display: flex;
+}
+
+.start-text {
+
+	padding-right: 42px;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+	}
+
+	&__title {
+		padding-top: 224px
+	}
+
+	&__paragraph {
+		padding-top: 42px;
+	}
+
+	&__button {
+		padding-top: 42px;
+	}
+
+}
+
+.start-img {
+	padding-top: 60px;
 }
