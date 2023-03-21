@@ -1,0 +1,55 @@
+$color-primary: #F1CDB3;
+$color-primary-light: #FDDCC4;
+
+$color-dark-xl: #4C4C4C;
+$color-dark-l: #545454;
+$color-dark-s: #CDCDCD;
+
+$color-light-xl: #FFFFFF;
+$color-light-l: #CDCDCD;
+$color-light-s: #FAFAFA;
+
+$font-sizes: (
+	"header-2": 44px,
+	"header-3": 35px,
+	"header-4": 20px,
+	"header-5": 15px,
+	"paragraph-l": 15px,
+	"paragraph-s": 12px,
+	"modal": 15px
+);
+
+$font-families: (
+	"header": ('Georgia', serif),
+	"paragraph": ('Arial', sans-serif)
+);
+
+$font-weights: (
+	"regular": 400
+);
+
+body {
+	background-image: url("../assets/start-screen-gradient-background.png");
+	background-repeat: no-repeat;
+}
+
+.logo {
+
+	&__title {
+		color: $color-primary;
+		font-family: map-get($font-families, header);
+		font-weight: map-get($font-weights, regular);
+		font-size: map-get($font-sizes, header-3);
+	}
+
+	&__subtitle {
+		color: $color-light-xl;
+		font-family: map-get($font-families, paragraph);
+		font-weight: map-get($font-weights, regular);
+		font-size: map-get($font-sizes, paragraph-l);
+	}
+
+	&__link {
+		text-decoration: none
+	}
+}
