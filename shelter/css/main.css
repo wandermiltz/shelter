@@ -7,11 +7,54 @@
   background: #43362e;
 }
 
+.light-background {
+  background: #F6F6F6;
+}
+
 body {
   display: flex;
   justify-content: start;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.layout-2-col {
+  display: flex;
+}
+
+.header-2 {
+  color: #FFFFFF;
+  font-family: "Georgia", serif;
+  font-size: 44px;
+  line-height: 130%;
+}
+
+.header-3 {
+  color: #545454;
+  font-family: "Georgia", serif;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+
+.header-4 {
+  color: #545454;
+  font-family: "Georgia", serif;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+}
+
+.paragraph-l {
+  font-family: "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 160%;
+}
+.paragraph-l_light {
+  color: #CDCDCD;
+}
+.paragraph-l_dark {
+  color: #4C4C4C;
 }
 
 .button {
@@ -86,6 +129,8 @@ body {
 }
 
 .navigation__list {
+  display: flex;
+  align-items: center;
   list-style: none;
 }
 .navigation__item {
@@ -123,42 +168,6 @@ body {
 }
 .navigation__link_dark:hover {
   color: #292929;
-}
-.navigation__list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.header-2 {
-  color: #FFFFFF;
-  font-family: "Georgia", serif;
-  font-size: 44px;
-  line-height: 130%;
-}
-
-.header-3 {
-  color: #545454;
-  font-family: "Georgia", serif;
-  font-size: 35px;
-  line-height: 130%;
-  letter-spacing: 0.06em;
-}
-
-.paragraph-l {
-  font-family: "Arial", sans-serif;
-  font-size: 15px;
-  line-height: 160%;
-}
-.paragraph-l_light {
-  color: #CDCDCD;
-}
-.paragraph-l_dark {
-  color: #4C4C4C;
-}
-
-.layout-2-col {
-  display: flex;
 }
 
 .start-text__container {
@@ -199,4 +208,52 @@ body {
 }
 .about-text__paragraph {
   padding-top: 25px;
+}
+
+.our-friends__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 100px;
+}
+.our-friends__title {
+  text-align: center;
+  padding-top: 80px;
+}
+.our-friends__button {
+  padding-top: 60px;
+}
+
+.pet-cards__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.pet-card__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FAFAFA;
+  margin-left: 47px;
+  margin-right: 47px;
+}
+.pet-card__title {
+  padding-top: 25px;
+}
+.pet-card__button {
+  padding-top: 25px;
+  padding-bottom: 30px;
+}
+
+.pagination-button {
+  width: 48px;
+  height: 48px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 50px;
+}
+.pagination-button_colored {
+  border-color: #F1CDB3;
 }/*# sourceMappingURL=main.css.map */

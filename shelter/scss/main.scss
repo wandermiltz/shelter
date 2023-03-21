@@ -7,7 +7,7 @@ $color-dark-l: #545454;
 $color-dark-s: #CDCDCD;
 
 $color-light-xl: #FFFFFF;
-$color-light-l: #CDCDCD;
+$color-light-l: #F6F6F6;
 $color-light-s: #FAFAFA;
 
 $font-sizes: (
@@ -29,14 +29,15 @@ $font-families: (
 );
 
 $line-heights: (
-	"small": 110%,
-	"medium": 130%,
-	"large": 160%
+	"xs": 110%,
+	"s": 115%,
+	"m": 130%,
+	"l": 160%
 );
 
 $letter-spacings: (
-	"small": 0.06em,
-	"medium": 0.1em,
+	"s": 0.06em,
+	"m": 0.1em,
 );
 
 .wrapper {
@@ -48,6 +49,10 @@ $letter-spacings: (
 	background: #43362e;
 }
 
+.light-background {
+	background: $color-light-l;
+}
+
 body {
 	display: flex;
 	justify-content: start;
@@ -55,12 +60,53 @@ body {
 	min-height: 100vh;
 }
 
+.layout-2-col {
+	display: flex;
+}
+
+.header-2 {
+	color: $color-light-xl;
+	font-family: map-get($font-families, header);
+	font-size: map-get($font-sizes, header-2);
+	line-height: map-get($line-heights, m);
+}
+
+.header-3 {
+	color: $color-dark-l;
+	font-family: map-get($font-families, header);
+	font-size: map-get($font-sizes, header-3);
+	line-height: map-get($line-heights, m);
+	letter-spacing: map-get($letter-spacings, s);
+}
+
+.header-4 {
+	color: $color-dark-l;
+	font-family: map-get($font-families, header);
+	font-size: map-get($font-sizes, header-4);
+	line-height: map-get($line-heights, s);
+	letter-spacing: map-get($letter-spacings, s);
+}
+
+.paragraph-l {
+	font-family: map-get($font-families, paragraph);
+	font-size: map-get($font-sizes, paragraph-l);
+	line-height: map-get($line-heights, l);
+
+	&_light {
+		color: $color-dark-s;
+	}
+
+	&_dark {
+		color: $color-dark-xl;
+	}
+}
+
 .button {
 	color: $color-dark-3xl;
 	border-radius: 100px;
 	font-size: map-get($font-sizes, button);
-	line-height: map-get($line-heights, medium);
-	letter-spacing: map-get($letter-spacings, medium);
+	line-height: map-get($line-heights, m);
+	letter-spacing: map-get($letter-spacings, m);
 	padding: 15px 45px;
 	border: none;
 	outline: none;
@@ -101,8 +147,8 @@ body {
 	&__title {
 		font-family: map-get($font-families, header);
 		font-size: map-get($font-sizes, logo-title);
-		line-height: map-get($line-heights, small);
-		letter-spacing: map-get($letter-spacings, small);
+		line-height: map-get($line-heights, xs);
+		letter-spacing: map-get($letter-spacings, s);
 
 
 		&_light {
@@ -118,7 +164,7 @@ body {
 		font-family: map-get($font-families, paragraph);
 		font-size: map-get($font-sizes, logo-subtitle);
 		line-height: 13px;
-		letter-spacing: map-get($letter-spacings, medium);
+		letter-spacing: map-get($letter-spacings, m);
 		padding-top: 10px;
 		padding-left: 5px;
 
@@ -145,6 +191,8 @@ body {
 .navigation {
 
 	&__list {
+		display: flex;
+		align-items: center;
 		list-style: none;
 	}
 
@@ -156,7 +204,7 @@ body {
 		text-decoration: none;
 		font-family: map-get($font-families, paragraph);
 		font-size: map-get($font-sizes, paragraph-l);
-		line-height: map-get($line-heights, large);
+		line-height: map-get($line-heights, l);
 		padding-bottom: 5px;
 		transition-duration: 0.3s;
 		transition-property: color;
@@ -193,45 +241,6 @@ body {
 			}
 		}
 	}
-
-	&__list {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-	}
-}
-
-.header-2 {
-	color: $color-light-xl;
-	font-family: map-get($font-families, header);
-	font-size: map-get($font-sizes, header-2);
-	line-height: map-get($line-heights, medium);
-}
-
-.header-3 {
-	color: $color-dark-l;
-	font-family: map-get($font-families, header);
-	font-size: map-get($font-sizes, header-3);
-	line-height: map-get($line-heights, medium);
-	letter-spacing: map-get($letter-spacings, small);
-}
-
-.paragraph-l {
-	font-family: map-get($font-families, paragraph);
-	font-size: map-get($font-sizes, paragraph-l);
-	line-height: map-get($line-heights, large);
-
-	&_light {
-		color: $color-dark-s;
-	}
-
-	&_dark {
-		color: $color-dark-xl;
-	}
-}
-
-.layout-2-col {
-	display: flex;
 }
 
 .start-text {
@@ -282,6 +291,66 @@ body {
 	&__paragraph {
 		padding-top: 25px;
 	}
+}
 
+.our-friends {
 
+	&__container {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding-bottom: 100px;
+	}
+
+	&__title {
+		text-align: center;
+		padding-top: 80px;
+	}
+
+	&__button {
+		padding-top: 60px;
+	}
+}
+
+.pet-cards {
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 60px;
+	}
+}
+
+.pet-card {
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: $color-light-s;
+		margin-left: 47px;
+		margin-right: 47px;
+	}
+
+	&__title {
+		padding-top: 25px;
+	}
+
+	&__button {
+		padding-top: 25px;
+		padding-bottom: 30px
+	}
+}
+
+.pagination-button {
+	width: 48px;
+	height: 48px;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 50px;
+
+	&_colored {
+		border-color: $color-primary;
+	}
 }
