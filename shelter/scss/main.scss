@@ -50,7 +50,7 @@ $letter-spacings: (
 
 body {
 	display: flex;
-	justify-content: space-between;
+	justify-content: start;
 	flex-direction: column;
 	min-height: 100vh;
 }
@@ -99,7 +99,6 @@ body {
 .logo {
 
 	&__title {
-		color: $color-primary;
 		font-family: map-get($font-families, header);
 		font-size: map-get($font-sizes, logo-title);
 		line-height: map-get($line-heights, small);
@@ -209,11 +208,26 @@ body {
 	line-height: map-get($line-heights, medium);
 }
 
+.header-3 {
+	color: $color-dark-l;
+	font-family: map-get($font-families, header);
+	font-size: map-get($font-sizes, header-3);
+	line-height: map-get($line-heights, medium);
+	letter-spacing: map-get($letter-spacings, small);
+}
+
 .paragraph-l {
-	color: $color-dark-s;
 	font-family: map-get($font-families, paragraph);
 	font-size: map-get($font-sizes, paragraph-l);
 	line-height: map-get($line-heights, large);
+
+	&_light {
+		color: $color-dark-s;
+	}
+
+	&_dark {
+		color: $color-dark-xl;
+	}
 }
 
 .layout-2-col {
@@ -222,12 +236,11 @@ body {
 
 .start-text {
 
-	padding-right: 42px;
-
 	&__container {
 		display: flex;
 		justify-content: space-between;
 		flex-direction: column;
+		padding-right: 42px;
 	}
 
 	&__title {
@@ -241,9 +254,34 @@ body {
 	&__button {
 		padding-top: 42px;
 	}
-
 }
 
 .start-img {
-	padding-top: 60px;
+	padding-top: 61px;
+	margin-bottom: -5px;
+}
+
+.about-img {
+	padding-left: 175px;
+	padding-top: 80px;
+	padding-bottom: 100px;
+}
+
+.about-text {
+
+	&__container {
+		display: flex;
+		justify-content: start;
+		flex-direction: column;
+		padding-top: 95px;
+		padding-right: 175px;
+		padding-left: 120px;
+		padding-bottom: 114px;
+	}
+
+	&__paragraph {
+		padding-top: 25px;
+	}
+
+
 }

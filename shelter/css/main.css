@@ -9,7 +9,7 @@
 
 body {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   flex-direction: column;
   min-height: 100vh;
 }
@@ -51,7 +51,6 @@ body {
 }
 
 .logo__title {
-  color: #F1CDB3;
   font-family: "Georgia", serif;
   font-size: 32px;
   line-height: 110%;
@@ -138,24 +137,35 @@ body {
   line-height: 130%;
 }
 
+.header-3 {
+  color: #545454;
+  font-family: "Georgia", serif;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+
 .paragraph-l {
-  color: #CDCDCD;
   font-family: "Arial", sans-serif;
   font-size: 15px;
   line-height: 160%;
+}
+.paragraph-l_light {
+  color: #CDCDCD;
+}
+.paragraph-l_dark {
+  color: #4C4C4C;
 }
 
 .layout-2-col {
   display: flex;
 }
 
-.start-text {
-  padding-right: 42px;
-}
 .start-text__container {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  padding-right: 42px;
 }
 .start-text__title {
   padding-top: 224px;
@@ -168,5 +178,25 @@ body {
 }
 
 .start-img {
-  padding-top: 60px;
+  padding-top: 61px;
+  margin-bottom: -5px;
+}
+
+.about-img {
+  padding-left: 175px;
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.about-text__container {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  padding-top: 95px;
+  padding-right: 175px;
+  padding-left: 120px;
+  padding-bottom: 114px;
+}
+.about-text__paragraph {
+  padding-top: 25px;
 }/*# sourceMappingURL=main.css.map */
