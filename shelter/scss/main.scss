@@ -10,6 +10,8 @@ $color-light-l: #CDCDCD;
 $color-light-s: #FAFAFA;
 
 $font-sizes: (
+	"logo-title": 32px,
+	"logo-subtitle": 13px,
 	"header-2": 44px,
 	"header-3": 35px,
 	"header-4": 20px,
@@ -28,9 +30,30 @@ $font-weights: (
 	"regular": 400
 );
 
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.dark-background {
+	background: #43362e;
+}
+
 body {
-	background-image: url("../assets/start-screen-gradient-background.png");
-	background-repeat: no-repeat;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.header {
+
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding-top: 60px;
+	}
 }
 
 .logo {
@@ -39,17 +62,58 @@ body {
 		color: $color-primary;
 		font-family: map-get($font-families, header);
 		font-weight: map-get($font-weights, regular);
-		font-size: map-get($font-sizes, header-3);
+		font-size: map-get($font-sizes, logo-title);
+		letter-spacing: 0.06em;
 	}
 
 	&__subtitle {
 		color: $color-light-xl;
 		font-family: map-get($font-families, paragraph);
 		font-weight: map-get($font-weights, regular);
-		font-size: map-get($font-sizes, paragraph-l);
+		font-size: map-get($font-sizes, logo-subtitle);
+		letter-spacing: 0.1em;
+		padding-top: 8px;
+		padding-left: 5px;
 	}
 
 	&__link {
-		text-decoration: none
+		text-decoration: none;
+	}
+}
+
+.navigation {
+
+	&__list {
+		list-style: none;
+	}
+
+	&__item {
+		margin-left: 35px;
+	}
+
+	&__link {
+		text-decoration: none;
+		color: $color-dark-s;
+		font-weight: map-get($font-weights, regular);
+		font-family: map-get($font-families, paragraph);
+		font-size: map-get($font-sizes, paragraph-l);
+		padding-bottom: 5px;
+
+		&:hover {
+			color: $color-light-s;
+			cursor: pointer;
+		}
+
+		&:active {
+			color: $color-light-s;
+			border-bottom: 3px solid $color-primary ;
+			cursor: none;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
 	}
 }

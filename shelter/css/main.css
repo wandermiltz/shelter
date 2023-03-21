@@ -1,20 +1,71 @@
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dark-background {
+  background: #43362e;
+}
+
 body {
-  background-image: url("../assets/start-screen-gradient-background.png");
-  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 60px;
 }
 
 .logo__title {
   color: #F1CDB3;
   font-family: "Georgia", serif;
   font-weight: 400;
-  font-size: 35px;
+  font-size: 32px;
+  letter-spacing: 0.06em;
 }
 .logo__subtitle {
   color: #FFFFFF;
   font-family: "Arial", sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  padding-top: 8px;
+  padding-left: 5px;
 }
 .logo__link {
   text-decoration: none;
+}
+
+.navigation__list {
+  list-style: none;
+}
+.navigation__item {
+  margin-left: 35px;
+}
+.navigation__link {
+  text-decoration: none;
+  color: #CDCDCD;
+  font-weight: 400;
+  font-family: "Arial", sans-serif;
+  font-size: 15px;
+  padding-bottom: 5px;
+}
+.navigation__link:hover {
+  color: #FAFAFA;
+  cursor: pointer;
+}
+.navigation__link:active {
+  color: #FAFAFA;
+  border-bottom: 3px solid #F1CDB3;
+  cursor: none;
+}
+.navigation__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }/*# sourceMappingURL=main.css.map */
