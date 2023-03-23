@@ -4,6 +4,7 @@ $color-primary-light: #FDDCC4;
 $color-dark-3xl: #292929;
 $color-dark-xl: #4C4C4C;
 $color-dark-l: #545454;
+$color-dark-m: #B2B2B2;
 $color-dark-s: #CDCDCD;
 
 $color-light-xl: #FFFFFF;
@@ -32,7 +33,8 @@ $line-heights: (
 	"xs": 110%,
 	"s": 115%,
 	"m": 130%,
-	"l": 160%
+	"l": 150%,
+	"xl": 160%
 );
 
 $letter-spacings: (
@@ -87,10 +89,18 @@ body {
 	letter-spacing: map-get($letter-spacings, s);
 }
 
+.header-5 {
+	color: $color-dark-l;
+	font-family: map-get($font-families, header);
+	font-size: map-get($font-sizes, header-5);
+	line-height: map-get($line-heights, s);
+	letter-spacing: map-get($letter-spacings, s);
+}
+
 .paragraph-l {
 	font-family: map-get($font-families, paragraph);
 	font-size: map-get($font-sizes, paragraph-l);
-	line-height: map-get($line-heights, l);
+	line-height: map-get($line-heights, xl);
 
 	&_light {
 		color: $color-dark-s;
@@ -99,6 +109,14 @@ body {
 	&_dark {
 		color: $color-dark-xl;
 	}
+}
+
+.paragraph-s {
+	color: $color-dark-m;
+	font-family: map-get($font-families, paragraph);
+	font-size: map-get($font-sizes, paragraph-s);
+	line-height: map-get($line-heights, l);
+	font-style: italic;
 }
 
 .button {
@@ -192,6 +210,7 @@ body {
 
 	&__list {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		list-style: none;
 	}
@@ -204,7 +223,7 @@ body {
 		text-decoration: none;
 		font-family: map-get($font-families, paragraph);
 		font-size: map-get($font-sizes, paragraph-l);
-		line-height: map-get($line-heights, l);
+		line-height: map-get($line-heights, xl);
 		padding-bottom: 5px;
 		transition-duration: 0.3s;
 		transition-property: color;
@@ -316,6 +335,7 @@ body {
 
 	&__container {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
 		padding-top: 60px;
@@ -412,7 +432,6 @@ body {
 	}
 }
 
-
 .help-item {
 	display: flex;
 	flex-direction: column;
@@ -423,5 +442,45 @@ body {
 	&__title {
 		padding-top: 25px;
 	}
+}
 
+.in-addition-img {
+	padding-top: 91px;
+	padding-left: 143px;
+}
+
+.in-addition-text {
+
+	padding-left: 30px;
+	padding-right: 160px;
+
+	&__title {
+		padding-top: 80px;
+	}
+
+	&__subtitle {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	&__paragraph {
+		padding-top: 20px;
+		padding-bottom: 100px;
+	}
+}
+
+.credit-card {
+	max-width: 335px;
+	display: flex;
+	padding: 10px 0px 5px 15px;
+	background-color: $color-primary;
+	border-radius: 9px;
+
+	&__link {
+		text-decoration: none;
+	}
+
+	&__number {
+		padding-left: 15px;
+	}
 }
