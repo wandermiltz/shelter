@@ -344,6 +344,9 @@ body {
 }
 
 .pagination-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 48px;
 	height: 48px;
 	border-style: solid;
@@ -352,5 +355,16 @@ body {
 
 	&_colored {
 		border-color: $color-primary;
+	}
+
+	&__arrow {
+		width: 14px;
+		height: 6px;
+		background: url("../assets/icons/Arrow.svg");
+		background-repeat: no-repeat;
+
+		&_left {
+			transform: rotate(180deg);
+		}
 	}
 }

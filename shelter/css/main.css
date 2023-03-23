@@ -248,6 +248,9 @@ body {
 }
 
 .pagination-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 48px;
   height: 48px;
   border-style: solid;
@@ -256,4 +259,13 @@ body {
 }
 .pagination-button_colored {
   border-color: #F1CDB3;
+}
+.pagination-button__arrow {
+  width: 14px;
+  height: 6px;
+  background: url("../assets/icons/Arrow.svg");
+  background-repeat: no-repeat;
+}
+.pagination-button__arrow_left {
+  transform: rotate(180deg);
 }/*# sourceMappingURL=main.css.map */
