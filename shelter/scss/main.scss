@@ -4,10 +4,11 @@ $color-primary-light: #FDDCC4;
 $color-dark-3xl: #292929;
 $color-dark-xl: #4C4C4C;
 $color-dark-l: #545454;
+$color-dark-m: #B2B2B2;
 $color-dark-s: #CDCDCD;
 
 $color-light-xl: #FFFFFF;
-$color-light-l: #CDCDCD;
+$color-light-l: #F6F6F6;
 $color-light-s: #FAFAFA;
 
 $font-sizes: (
@@ -29,14 +30,16 @@ $font-families: (
 );
 
 $line-heights: (
-	"small": 110%,
-	"medium": 130%,
-	"large": 160%
+	"xs": 110%,
+	"s": 115%,
+	"m": 130%,
+	"l": 150%,
+	"xl": 160%
 );
 
 $letter-spacings: (
-	"small": 0.06em,
-	"medium": 0.1em,
+	"s": 0.06em,
+	"m": 0.1em,
 );
 
 .wrapper {
@@ -48,19 +51,80 @@ $letter-spacings: (
 	background: #43362e;
 }
 
+.light-background {
+	background: $color-light-l;
+}
+
 body {
 	display: flex;
-	justify-content: space-between;
+	justify-content: start;
 	flex-direction: column;
 	min-height: 100vh;
+}
+
+.layout-2-col {
+	display: flex;
+}
+
+.header-2 {
+	color: $color-light-xl;
+	font-family: map-get($font-families, header);
+	font-size: map-get($font-sizes, header-2);
+	line-height: map-get($line-heights, m);
+}
+
+.header-3 {
+	color: $color-dark-l;
+	font-family: map-get($font-families, header);
+	font-size: map-get($font-sizes, header-3);
+	line-height: map-get($line-heights, m);
+	letter-spacing: map-get($letter-spacings, s);
+}
+
+.header-4 {
+	color: $color-dark-l;
+	font-family: map-get($font-families, header);
+	font-size: map-get($font-sizes, header-4);
+	line-height: map-get($line-heights, s);
+	letter-spacing: map-get($letter-spacings, s);
+}
+
+.header-5 {
+	color: $color-dark-l;
+	font-family: map-get($font-families, header);
+	font-size: map-get($font-sizes, header-5);
+	line-height: map-get($line-heights, s);
+	letter-spacing: map-get($letter-spacings, s);
+}
+
+.paragraph-l {
+	font-family: map-get($font-families, paragraph);
+	font-size: map-get($font-sizes, paragraph-l);
+	line-height: map-get($line-heights, xl);
+
+	&_light {
+		color: $color-dark-s;
+	}
+
+	&_dark {
+		color: $color-dark-xl;
+	}
+}
+
+.paragraph-s {
+	color: $color-dark-m;
+	font-family: map-get($font-families, paragraph);
+	font-size: map-get($font-sizes, paragraph-s);
+	line-height: map-get($line-heights, l);
+	font-style: italic;
 }
 
 .button {
 	color: $color-dark-3xl;
 	border-radius: 100px;
 	font-size: map-get($font-sizes, button);
-	line-height: map-get($line-heights, medium);
-	letter-spacing: map-get($letter-spacings, medium);
+	line-height: map-get($line-heights, m);
+	letter-spacing: map-get($letter-spacings, m);
 	padding: 15px 45px;
 	border: none;
 	outline: none;
@@ -99,11 +163,10 @@ body {
 .logo {
 
 	&__title {
-		color: $color-primary;
 		font-family: map-get($font-families, header);
 		font-size: map-get($font-sizes, logo-title);
-		line-height: map-get($line-heights, small);
-		letter-spacing: map-get($letter-spacings, small);
+		line-height: map-get($line-heights, xs);
+		letter-spacing: map-get($letter-spacings, s);
 
 
 		&_light {
@@ -119,7 +182,7 @@ body {
 		font-family: map-get($font-families, paragraph);
 		font-size: map-get($font-sizes, logo-subtitle);
 		line-height: 13px;
-		letter-spacing: map-get($letter-spacings, medium);
+		letter-spacing: map-get($letter-spacings, m);
 		padding-top: 10px;
 		padding-left: 5px;
 
@@ -146,6 +209,9 @@ body {
 .navigation {
 
 	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
 		list-style: none;
 	}
 
@@ -157,7 +223,7 @@ body {
 		text-decoration: none;
 		font-family: map-get($font-families, paragraph);
 		font-size: map-get($font-sizes, paragraph-l);
-		line-height: map-get($line-heights, large);
+		line-height: map-get($line-heights, xl);
 		padding-bottom: 5px;
 		transition-duration: 0.3s;
 		transition-property: color;
@@ -194,40 +260,15 @@ body {
 			}
 		}
 	}
-
-	&__list {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-	}
-}
-
-.header-2 {
-	color: $color-light-xl;
-	font-family: map-get($font-families, header);
-	font-size: map-get($font-sizes, header-2);
-	line-height: map-get($line-heights, medium);
-}
-
-.paragraph-l {
-	color: $color-dark-s;
-	font-family: map-get($font-families, paragraph);
-	font-size: map-get($font-sizes, paragraph-l);
-	line-height: map-get($line-heights, large);
-}
-
-.layout-2-col {
-	display: flex;
 }
 
 .start-text {
-
-	padding-right: 42px;
 
 	&__container {
 		display: flex;
 		justify-content: space-between;
 		flex-direction: column;
+		padding-right: 42px;
 	}
 
 	&__title {
@@ -241,9 +282,203 @@ body {
 	&__button {
 		padding-top: 42px;
 	}
-
 }
 
 .start-img {
-	padding-top: 60px;
+	padding-top: 61px;
+	margin-bottom: -5px;
+}
+
+.about-img {
+	padding-left: 175px;
+	padding-top: 80px;
+	padding-bottom: 98px;
+}
+
+.about-text {
+
+	&__container {
+		display: flex;
+		justify-content: start;
+		flex-direction: column;
+		padding-top: 95px;
+		padding-right: 175px;
+		padding-left: 120px;
+		padding-bottom: 98px;
+	}
+
+	&__paragraph {
+		padding-top: 25px;
+	}
+}
+
+.our-friends {
+
+	&__container {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding-bottom: 100px;
+	}
+
+	&__title {
+		text-align: center;
+		padding-top: 80px;
+	}
+
+	&__button {
+		padding-top: 61px;
+	}
+}
+
+.pet-cards {
+
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 60px;
+	}
+}
+
+.pet-card {
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: $color-light-s;
+		margin-left: 47px;
+		margin-right: 47px;
+	}
+
+	&__title {
+		padding-top: 25px;
+	}
+
+	&__button {
+		padding-top: 28px;
+		padding-bottom: 30px
+	}
+}
+
+.pagination-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 48px;
+	height: 48px;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 50px;
+
+	&_colored {
+		border-color: $color-primary;
+	}
+
+	&__arrow {
+		width: 14px;
+		height: 6px;
+		background: url("../assets/icons/Arrow.svg");
+		background-repeat: no-repeat;
+
+		&_left {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+.help {
+
+	&__container {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	&__title {
+		padding-top: 80px;
+		text-align: center;
+	}
+}
+
+.help-items {
+
+	&__container {
+		max-width: 1150px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		padding-bottom: 100px;
+	}
+
+	&__row-1 {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__row-2 {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.help-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 58px;
+	padding-left: 60px;
+	padding-right: 60px;
+
+	&__title {
+		padding-top: 25px;
+	}
+}
+
+.in-addition-img {
+	padding-top: 91px;
+	padding-left: 143px;
+}
+
+.in-addition-text {
+
+	padding-left: 30px;
+	padding-right: 160px;
+
+	&__title {
+		padding-top: 80px;
+	}
+
+	&__subtitle {
+		padding-top: 18px;
+		padding-bottom: 20px;
+	}
+
+	&__paragraph {
+		padding-top: 20px;
+		padding-bottom: 100px;
+	}
+}
+
+.credit-card {
+	max-width: 335px;
+	display: flex;
+	padding: 10px 0px 5px 15px;
+	background-color: $color-primary;
+	border-radius: 9px;
+
+	&__link {
+		text-decoration: none;
+	}
+
+	&__number {
+		padding-left: 15px;
+	}
 }
