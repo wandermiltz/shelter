@@ -409,9 +409,8 @@ body {
 		max-width: 1150px;
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
-		padding-top: 60px;
 		padding-bottom: 100px;
 	}
 
@@ -423,8 +422,6 @@ body {
 	}
 
 	&__row-2 {
-		padding-left: 85px;
-		padding-top: 55px;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -436,6 +433,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding-top: 58px;
 	padding-left: 60px;
 	padding-right: 60px;
 
@@ -459,7 +457,7 @@ body {
 	}
 
 	&__subtitle {
-		padding-top: 20px;
+		padding-top: 18px;
 		padding-bottom: 20px;
 	}
 
