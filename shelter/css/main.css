@@ -120,7 +120,14 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.header__container_main {
   padding-top: 60px;
+  padding-bottom: 30px;
+}
+.header__container_pets {
+  padding-top: 30px;
+  padding-bottom: 32px;
 }
 
 .logo__title {
@@ -165,7 +172,7 @@ body {
   list-style: none;
 }
 .navigation__item {
-  margin-left: 35px;
+  margin-left: 36px;
 }
 .navigation__link {
   text-decoration: none;
@@ -175,6 +182,9 @@ body {
   padding-bottom: 5px;
   transition-duration: 0.3s;
   transition-property: color;
+}
+.navigation__link_active {
+  border-bottom: 3px solid #F1CDB3;
 }
 .navigation__link:hover {
   cursor: pointer;
@@ -208,10 +218,10 @@ body {
   padding-right: 42px;
 }
 .start-text__title {
-  padding-top: 224px;
+  padding-top: 195px;
 }
 .start-text__paragraph {
-  padding-top: 42px;
+  padding-top: 40px;
 }
 .start-text__button {
   padding-top: 42px;
@@ -220,7 +230,7 @@ body {
 .start-img {
   display: flex;
   align-items: flex-end;
-  padding-top: 61px;
+  padding-top: 32px;
 }
 
 .about-img {
@@ -252,8 +262,17 @@ body {
   text-align: center;
   padding-top: 80px;
 }
+.our-friends__cards {
+  width: 82%;
+}
+.our-friends__slider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .our-friends__button {
-  padding-top: 61px;
+  padding-top: 27px;
 }
 
 .pet-cards__container {
@@ -261,6 +280,7 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  align-content: space-between;
   padding-top: 60px;
 }
 
@@ -269,10 +289,9 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: #FAFAFA;
-  margin-left: 47px;
-  margin-right: 47px;
-  border-radius: 9px;
   transition: 1s;
+  border-radius: 9px;
+  margin-bottom: 32px;
 }
 .pet-card__container:hover {
   cursor: pointer;
@@ -293,6 +312,11 @@ body {
 
 .paginator {
   display: flex;
+  padding-top: 30px;
+}
+.paginator__item {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .pagination-button {
@@ -306,21 +330,29 @@ body {
   border-radius: 50px;
   transition: 0.5s;
 }
+.pagination-button_in-slider {
+  margin-top: 20px;
+}
 .pagination-button_normal {
   border-color: #F1CDB3;
+}
+.pagination-button_normal:hover {
+  cursor: pointer;
+  border-color: #FDDCC4;
+  background-color: #FDDCC4;
 }
 .pagination-button_active {
   border-color: #F1CDB3;
   background-color: #F1CDB3;
 }
-.pagination-button_inactive {
-  color: #CDCDCD;
-  border-color: #CDCDCD;
-}
-.pagination-button:hover {
+.pagination-button_active:hover {
   cursor: pointer;
   border-color: #FDDCC4;
   background-color: #FDDCC4;
+}
+.pagination-button_inactive {
+  color: #CDCDCD;
+  border-color: #CDCDCD;
 }
 .pagination-button__arrow {
   width: 14px;
@@ -422,9 +454,9 @@ body {
 }
 .footer__contact {
   display: flex;
+  align-items: center;
   transition: 0.5s;
   padding-top: 40px;
-  align-items: center;
 }
 .footer__contact:hover {
   cursor: pointer;
