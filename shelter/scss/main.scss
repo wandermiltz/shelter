@@ -376,6 +376,10 @@ body {
 	}
 }
 
+.paginator {
+	display: flex;
+}
+
 .pagination-button {
 	display: flex;
 	justify-content: center;
@@ -385,9 +389,26 @@ body {
 	border-style: solid;
 	border-width: 2px;
 	border-radius: 50px;
+	transition: 0.5s;
 
-	&_colored {
+	&_normal {
 		border-color: $color-primary;
+	}
+
+	&_active {
+		border-color: $color-primary;
+		background-color: $color-primary;
+	}
+
+	&_inactive {
+		color: $color-dark-s;
+		border-color: $color-dark-s;
+	}
+
+	&:hover {
+		cursor: pointer;
+		border-color: $color-primary-light;
+		background-color: $color-primary-light;
 	}
 
 	&__arrow {
