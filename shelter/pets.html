@@ -10,109 +10,137 @@
 	<link rel="stylesheet" href="./css/main.css">
 </head>
 
-<header class="header">
-	<div class="wrapper">
-		<div class="header__container">
-			<div class="logo">
-				<a class="logo__link" href="./index.html">
-					<div class="logo__title logo__title_dark">
-						Cozy House
-					</div>
-					<div class="logo__subtitle logo__subtitle_dark">
-						Shelter for pets in Boston
-					</div>
-				</a>
-			</div>
-			<nav class="navigation">
-				<ul class="navigation__list">
-					<li class="navigation__item">
-						<a href="./index.html" class="navigation__link navigation__link_dark">About the shelter</a>
-					</li>
-					<li class="navigation__item">
-						<a href="./pets.html" class="navigation__link navigation__link_dark">Our pets</a>
-					</li>
-					<li class="navigation__item">
-						<a href="./index.html#help" class="navigation__link navigation__link_dark">Help the shelter</a>
-					</li>
-					<li class="navigation__item">
-						<a href="#footer" class="navigation__link navigation__link_dark">Contacts</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-</header>
-<main>
-	<div class="wrapper">
-		<div class="header-3">
-			Our friends who are looking for a house
-		</div>
-		<div class="pet-cards-container">
-			<div class="pet-card">
-				<div class="pet-card__img"></div>
-				<div class="pet-card__title">Katrine</div>
-				<button class="button button_bordered">Learn more</button>
-			</div>
-		</div>
-		<div class="pagination">
-			<button class="pagination__button pagination__button_inactive"></button>
-			<button class="pagination__button pagination__button_inactive"></button>
-			<button class="pagination__button pagination__button_active"></button>
-			<button class="pagination__button"></button>
-			<button class="pagination__button"></button>
-		</div>
-	</div>
-</main>
-<footer class="footer" id="footer">
-	<div class="wrapper">
-		<div class="header-3">
-			For questions and suggestions
-		</div>
-		<div class="footer__column">
-			<div class="footer__contact">
-				<div class="footer__contact-icon"></div>
-				<div class="footer__contact-text">
-					<a class="footer__contact-email" href="mailto:email@shelter.com">
-						email@shelter.com
-					</a>
-				</div>
-			</div>
-			<div class="footer__contact">
-				<div class="footer__contact-icon"></div>
-				<div class="footer__contact-text">
-					<a lass="footer__contact-phone" href="tel:+13 674 567 75 54">
-						+13 674 567 75 54
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="header-3">
-			We are waiting for your visit
-		</div>
-		<div class="footer__column">
-			<div class="footer__location">
-				<div class="footer__location-icon"></div>
-				<div class="footer__location-text">
-					<a href="https://goo.gl/maps/eNGUhBGtBpj59NM16" target="_blank">
-						1 Central Street, Boston (entrance from the store)
-					</a>
-				</div>
-			</div>
-			<div class="footer__location">
-				<div class="footer__location-icon"></div>
-				<div class="footer__location-text">
-					<a href="https://goo.gl/maps/ZtmCuaaowhEaADbs5" target="_blank">
-						18 South Park, London
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="footer__img"></div>
-	</div>
-</footer>
-
 <body>
 
+	<header class="header">
+		<div class="wrapper">
+			<div class="header__container">
+				<div class="logo">
+					<a class="logo__link" href="./index.html">
+						<div class="logo__title logo__title_dark">
+							Cozy House
+						</div>
+						<div class="logo__subtitle logo__subtitle_dark">
+							Shelter for pets in Boston
+						</div>
+					</a>
+				</div>
+				<nav class="navigation">
+					<ul class="navigation__list">
+						<li class="navigation__item">
+							<a href="./index.html" class="navigation__link navigation__link_dark">About the shelter</a>
+						</li>
+						<li class="navigation__item">
+							<a href="./pets.html" class="navigation__link navigation__link_dark">Our pets</a>
+						</li>
+						<li class="navigation__item">
+							<a href="./index.html#help" class="navigation__link navigation__link_dark">Help the shelter</a>
+						</li>
+						<li class="navigation__item">
+							<a href="#footer" class="navigation__link navigation__link_dark">Contacts</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="wrapper">
+			<div class="header-3">
+				Our friends who are looking for a house
+			</div>
+			<div class="pet-cards-container">
+				<div class="pet-card">
+					<div class="pet-card__img"></div>
+					<div class="pet-card__title">Katrine</div>
+					<button class="button button_bordered">Learn more</button>
+				</div>
+			</div>
+			<div class="paginator">
+				<div class="pagination-button pagination-button_inactive">
+					<div class="">&lt; &lt;</div>
+				</div>
+				<div class="pagination-button pagination-button_inactive">
+					<div class="">&lt;</div>
+				</div>
+				<div class="pagination-button pagination-button_active">
+					<div class="">1</div>
+				</div>
+				<div class="pagination-button pagination-button_normal">
+					<div class="">&gt;</div>
+				</div>
+				<div class="pagination-button pagination-button_normal">
+					<div class="">&gt; &gt;</div>
+				</div>
+
+			</div>
+		</div>
+	</main>
+	<footer class="footer dark-background" id="footer">
+		<div class="wrapper">
+			<div class="layout-3-col">
+				<div class="footer__column">
+					<div class="header-3 header-3_light">
+						For questions <br>
+						and suggestions
+					</div>
+
+					<div class="footer__contact">
+						<div class="footer__contact-icon">
+							<img src="./assets/icons/mail.svg" alt="mail-icon">
+						</div>
+						<div class="footer__contact-text">
+							<a href="mailto:email@shelter.com" class="footer__contact-link header-4 header-4_primary">
+								email@shelter.com
+							</a>
+						</div>
+					</div>
+					<div class="footer__contact">
+						<div class="footer__contact-icon">
+							<img src="./assets/icons/phone.svg" alt="phone-icon">
+						</div>
+						<div class="footer__contact-text">
+							<a href="tel:+13 674 567 75 54" class="footer__contact-link header-4 header-4_primary">
+								+13 674 567 75 54
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="footer__column">
+					<div class="header-3 header-3_light">
+						We are waiting <br>
+						for your visit
+					</div>
+					<div class="footer__contact footer__contact_location">
+						<div class="footer__contact-icon">
+							<img src="./assets/icons/pin.svg" alt="pin-icon">
+						</div>
+						<div class="footer__contact-text">
+							<a href="https://goo.gl/maps/eNGUhBGtBpj59NM16" target="_blank"
+								class="footer__contact-link header-4 header-4_primary">
+								1 Central Street, Boston <br>
+								(entrance from the store)
+							</a>
+						</div>
+					</div>
+					<div class="footer__contact footer__contact_location">
+						<div class="footer__contact-icon">
+							<img src="./assets/icons/pin.svg" alt="pin-icon">
+						</div>
+						<div class="footer__contact-text">
+							<a href="https://goo.gl/maps/ZtmCuaaowhEaADbs5" target="_blank"
+								class="footer__contact-link header-4 header-4_primary">
+								18 South Park, London
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="footer__img">
+					<img src="./assets/photos/pets-pages/footer-puppy.png" alt="footer-puppy">
+				</div>
+			</div>
+		</div>
+	</footer>
 </body>
 
 </html>
