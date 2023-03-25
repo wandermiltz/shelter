@@ -22,6 +22,10 @@ body {
   display: flex;
 }
 
+.layout-3-col {
+  display: flex;
+}
+
 .header-2 {
   color: #FFFFFF;
   font-family: "Georgia", serif;
@@ -30,19 +34,29 @@ body {
 }
 
 .header-3 {
-  color: #545454;
   font-family: "Georgia", serif;
   font-size: 35px;
   line-height: 130%;
   letter-spacing: 0.06em;
 }
+.header-3_dark {
+  color: #545454;
+}
+.header-3_light {
+  color: #FFFFFF;
+}
 
 .header-4 {
-  color: #545454;
   font-family: "Georgia", serif;
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
+}
+.header-4_dark {
+  color: #545454;
+}
+.header-4_primary {
+  color: #F1CDB3;
 }
 
 .header-5 {
@@ -115,7 +129,7 @@ body {
   line-height: 110%;
   letter-spacing: 0.06em;
 }
-.logo__title_light {
+.logo__title_primary {
   color: #F1CDB3;
 }
 .logo__title_dark {
@@ -204,8 +218,9 @@ body {
 }
 
 .start-img {
+  display: flex;
+  align-items: flex-end;
   padding-top: 61px;
-  margin-bottom: -5px;
 }
 
 .about-img {
@@ -388,9 +403,45 @@ body {
   background-color: #F1CDB3;
   border-radius: 9px;
 }
+.credit-card:hover {
+  cursor: pointer;
+  background-color: #FDDCC4;
+}
 .credit-card__link {
   text-decoration: none;
 }
 .credit-card__number {
   padding-left: 15px;
+}
+
+.footer__column {
+  display: flex;
+  flex-direction: column;
+  padding-right: 160px;
+  padding-top: 56px;
+}
+.footer__contact {
+  display: flex;
+  transition: 0.5s;
+  padding-top: 40px;
+  align-items: center;
+}
+.footer__contact:hover {
+  cursor: pointer;
+  text-shadow: 0 0 2px #F1CDB3;
+}
+.footer__contact_location {
+  padding-top: 32px;
+}
+.footer__contact-text {
+  padding-left: 20px;
+}
+.footer__contact-link {
+  text-decoration: none;
+}
+.footer__img {
+  display: flex;
+  align-items: flex-end;
+  padding-top: 40px;
+  margin-left: 5px;
 }/*# sourceMappingURL=main.css.map */
