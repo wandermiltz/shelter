@@ -172,7 +172,7 @@ body {
   list-style: none;
 }
 .navigation__item {
-  margin-left: 35px;
+  margin-left: 36px;
 }
 .navigation__link {
   text-decoration: none;
@@ -262,8 +262,17 @@ body {
   text-align: center;
   padding-top: 80px;
 }
+.our-friends__cards {
+  width: 82%;
+}
+.our-friends__slider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .our-friends__button {
-  padding-top: 61px;
+  padding-top: 27px;
 }
 
 .pet-cards__container {
@@ -284,10 +293,6 @@ body {
   border-radius: 9px;
   margin-bottom: 32px;
 }
-.pet-card__container_main {
-  margin-left: 47px;
-  margin-right: 47px;
-}
 .pet-card__container:hover {
   cursor: pointer;
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
@@ -307,6 +312,11 @@ body {
 
 .paginator {
   display: flex;
+  padding-top: 30px;
+}
+.paginator__item {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .pagination-button {
@@ -320,21 +330,29 @@ body {
   border-radius: 50px;
   transition: 0.5s;
 }
+.pagination-button_in-slider {
+  margin-top: 20px;
+}
 .pagination-button_normal {
   border-color: #F1CDB3;
+}
+.pagination-button_normal:hover {
+  cursor: pointer;
+  border-color: #FDDCC4;
+  background-color: #FDDCC4;
 }
 .pagination-button_active {
   border-color: #F1CDB3;
   background-color: #F1CDB3;
 }
-.pagination-button_inactive {
-  color: #CDCDCD;
-  border-color: #CDCDCD;
-}
-.pagination-button:hover {
+.pagination-button_active:hover {
   cursor: pointer;
   border-color: #FDDCC4;
   background-color: #FDDCC4;
+}
+.pagination-button_inactive {
+  color: #CDCDCD;
+  border-color: #CDCDCD;
 }
 .pagination-button__arrow {
   width: 14px;
@@ -436,9 +454,9 @@ body {
 }
 .footer__contact {
   display: flex;
+  align-items: center;
   transition: 0.5s;
   padding-top: 40px;
-  align-items: center;
 }
 .footer__contact:hover {
   cursor: pointer;

@@ -244,7 +244,7 @@ body {
 	}
 
 	&__item {
-		margin-left: 35px;
+		margin-left: 36px;
 	}
 
 	&__link {
@@ -359,8 +359,19 @@ body {
 		padding-top: 80px;
 	}
 
+	&__cards {
+		width: 82%;
+	}
+
+	&__slider {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
 	&__button {
-		padding-top: 61px;
+		padding-top: 27px;
 	}
 }
 
@@ -387,12 +398,6 @@ body {
 		border-radius: 9px;
 		margin-bottom: 32px;
 
-		&_main {
-			margin-left: 47px;
-			margin-right: 47px;
-		}
-
-		&_pets {}
 
 		&:hover {
 			cursor: pointer;
@@ -417,7 +422,14 @@ body {
 }
 
 .paginator {
+
 	display: flex;
+	padding-top: 30px;
+
+	&__item {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
 }
 
 .pagination-button {
@@ -431,24 +443,34 @@ body {
 	border-radius: 50px;
 	transition: 0.5s;
 
+	&_in-slider {
+		margin-top: 20px;
+	}
+
 	&_normal {
 		border-color: $color-primary;
+
+		&:hover {
+			cursor: pointer;
+			border-color: $color-primary-light;
+			background-color: $color-primary-light;
+		}
 	}
 
 	&_active {
 		border-color: $color-primary;
 		background-color: $color-primary;
+
+		&:hover {
+			cursor: pointer;
+			border-color: $color-primary-light;
+			background-color: $color-primary-light;
+		}
 	}
 
 	&_inactive {
 		color: $color-dark-s;
 		border-color: $color-dark-s;
-	}
-
-	&:hover {
-		cursor: pointer;
-		border-color: $color-primary-light;
-		background-color: $color-primary-light;
 	}
 
 	&__arrow {
@@ -573,9 +595,9 @@ body {
 
 	&__contact {
 		display: flex;
+		align-items: center;
 		transition: 0.5s;
 		padding-top: 40px;
-		align-items: center;
 
 		&:hover {
 			cursor: pointer;
