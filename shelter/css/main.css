@@ -26,7 +26,7 @@ body {
 }
 
 .noise-background {
-  background-image: url("/shelter/assets/noise_transparent@2x.png");
+  background-image: url("../assets/noise_transparent@2x.png");
 }
 
 .light-background {
@@ -375,7 +375,7 @@ body {
 .pagination-button__arrow {
   width: 14px;
   height: 6px;
-  background-image: url("/shelter/assets/icons/arrow.svg");
+  background-image: url("../assets/icons/arrow.svg");
   background-repeat: no-repeat;
 }
 .pagination-button__arrow_left {
