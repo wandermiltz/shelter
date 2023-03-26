@@ -1,3 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -7,15 +18,12 @@
   background: #43362e;
 }
 
-.light-background {
-  background: #F6F6F6;
+.noise-background {
+  background-image: url("../assets/noise_transparent@2x.png");
 }
 
-body {
-  display: flex;
-  justify-content: start;
-  flex-direction: column;
-  min-height: 100vh;
+.light-background {
+  background: #F6F6F6;
 }
 
 .layout-2-col {
@@ -236,7 +244,7 @@ body {
 .about-img {
   padding-left: 175px;
   padding-top: 80px;
-  padding-bottom: 98px;
+  padding-bottom: 95px;
 }
 
 .about-text__container {
@@ -246,10 +254,10 @@ body {
   padding-top: 95px;
   padding-right: 175px;
   padding-left: 120px;
-  padding-bottom: 98px;
+  padding-bottom: 95px;
 }
 .about-text__paragraph {
-  padding-top: 25px;
+  padding-top: 24px;
 }
 
 .our-friends__container {
@@ -272,7 +280,7 @@ body {
   justify-content: space-between;
 }
 .our-friends__button {
-  padding-top: 27px;
+  padding-top: 30px;
 }
 
 .pet-cards__container {
@@ -331,7 +339,7 @@ body {
   transition: 0.5s;
 }
 .pagination-button_in-slider {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .pagination-button_normal {
   border-color: #F1CDB3;
@@ -357,7 +365,7 @@ body {
 .pagination-button__arrow {
   width: 14px;
   height: 6px;
-  background: url("../assets/icons/arrow.svg");
+  background-image: url("../assets/icons/arrow.svg");
   background-repeat: no-repeat;
 }
 .pagination-button__arrow_left {
