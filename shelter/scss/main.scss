@@ -43,7 +43,14 @@ $letter-spacings: (
 );
 
 html {
+	box-sizing: border-box;
 	scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
 }
 
 body {
@@ -63,7 +70,7 @@ body {
 }
 
 .noise-background {
-	background-image: url("../assets/noise_transparent@2x.png");
+	background-image: url("/shelter/assets/noise_transparent@2x.png");
 }
 
 .light-background {
@@ -199,6 +206,8 @@ body {
 .logo {
 
 	&__title {
+		margin: 0;
+		font-weight: normal;
 		font-family: map-get($font-families, header);
 		font-size: map-get($font-sizes, logo-title);
 		line-height: map-get($line-heights, xs);
@@ -217,8 +226,8 @@ body {
 	&__subtitle {
 		font-family: map-get($font-families, paragraph);
 		font-size: map-get($font-sizes, logo-subtitle);
-		line-height: 13px;
 		letter-spacing: map-get($letter-spacings, m);
+		line-height: 15px;
 		padding-top: 10px;
 		padding-left: 5px;
 
@@ -264,10 +273,6 @@ body {
 		transition-duration: 0.3s;
 		transition-property: color;
 
-		&_active {
-			border-bottom: 3px solid $color-primary ;
-		}
-
 		&:hover {
 			cursor: pointer;
 		}
@@ -278,6 +283,11 @@ body {
 
 		&:focus {
 			border-bottom: 3px solid $color-primary ;
+		}
+
+		&_active {
+			border-bottom: 3px solid $color-primary;
+			pointer-events: none;
 		}
 
 		&_light {
@@ -484,7 +494,7 @@ body {
 	&__arrow {
 		width: 14px;
 		height: 6px;
-		background-image: url("../assets/icons/arrow.svg");
+		background-image: url("/shelter/assets/icons/arrow.svg");
 		background-repeat: no-repeat;
 
 		&_left {
@@ -572,7 +582,7 @@ body {
 }
 
 .credit-card {
-	max-width: 335px;
+	max-width: 350px;
 	display: flex;
 	padding: 10px 0px 5px 15px;
 	background-color: $color-primary;
@@ -601,11 +611,12 @@ body {
 		padding-top: 56px;
 	}
 
-	&__contact {
+	&__contact-link {
 		display: flex;
 		align-items: center;
 		transition: 0.5s;
 		padding-top: 40px;
+		text-decoration: none;
 
 		&:hover {
 			cursor: pointer;
@@ -619,10 +630,6 @@ body {
 
 	&__contact-text {
 		padding-left: 20px;
-	}
-
-	&__contact-link {
-		text-decoration: none;
 	}
 
 	&__img {

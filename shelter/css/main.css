@@ -1,5 +1,12 @@
 html {
+  box-sizing: border-box;
   scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
@@ -19,7 +26,7 @@ body {
 }
 
 .noise-background {
-  background-image: url("../assets/noise_transparent@2x.png");
+  background-image: url("/shelter/assets/noise_transparent@2x.png");
 }
 
 .light-background {
@@ -139,6 +146,8 @@ body {
 }
 
 .logo__title {
+  margin: 0;
+  font-weight: normal;
   font-family: "Georgia", serif;
   font-size: 32px;
   line-height: 110%;
@@ -153,8 +162,8 @@ body {
 .logo__subtitle {
   font-family: "Arial", sans-serif;
   font-size: 13px;
-  line-height: 13px;
   letter-spacing: 0.1em;
+  line-height: 15px;
   padding-top: 10px;
   padding-left: 5px;
 }
@@ -191,9 +200,6 @@ body {
   transition-duration: 0.3s;
   transition-property: color;
 }
-.navigation__link_active {
-  border-bottom: 3px solid #F1CDB3;
-}
 .navigation__link:hover {
   cursor: pointer;
 }
@@ -202,6 +208,10 @@ body {
 }
 .navigation__link:focus {
   border-bottom: 3px solid #F1CDB3;
+}
+.navigation__link_active {
+  border-bottom: 3px solid #F1CDB3;
+  pointer-events: none;
 }
 .navigation__link_light {
   color: #CDCDCD;
@@ -365,7 +375,7 @@ body {
 .pagination-button__arrow {
   width: 14px;
   height: 6px;
-  background-image: url("../assets/icons/arrow.svg");
+  background-image: url("/shelter/assets/icons/arrow.svg");
   background-repeat: no-repeat;
 }
 .pagination-button__arrow_left {
@@ -437,7 +447,7 @@ body {
 }
 
 .credit-card {
-  max-width: 335px;
+  max-width: 350px;
   display: flex;
   padding: 10px 0px 5px 15px;
   background-color: #F1CDB3;
@@ -460,24 +470,22 @@ body {
   padding-right: 160px;
   padding-top: 56px;
 }
-.footer__contact {
+.footer__contact-link {
   display: flex;
   align-items: center;
   transition: 0.5s;
   padding-top: 40px;
+  text-decoration: none;
 }
-.footer__contact:hover {
+.footer__contact-link:hover {
   cursor: pointer;
   text-shadow: 0 0 2px #F1CDB3;
 }
-.footer__contact_location {
+.footer__contact-link_location {
   padding-top: 32px;
 }
 .footer__contact-text {
   padding-left: 20px;
-}
-.footer__contact-link {
-  text-decoration: none;
 }
 .footer__img {
   display: flex;
