@@ -42,6 +42,24 @@ $letter-spacings: (
 	"m": 0.1em,
 );
 
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	display: flex;
+	justify-content: start;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
 .wrapper {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -51,15 +69,12 @@ $letter-spacings: (
 	background: #43362e;
 }
 
-.light-background {
-	background: $color-light-l;
+.noise-background {
+	background-image: url("/shelter/assets/noise_transparent@2x.png");
 }
 
-body {
-	display: flex;
-	justify-content: start;
-	flex-direction: column;
-	min-height: 100vh;
+.light-background {
+	background: $color-light-l;
 }
 
 .layout-2-col {
@@ -191,6 +206,8 @@ body {
 .logo {
 
 	&__title {
+		margin: 0;
+		font-weight: normal;
 		font-family: map-get($font-families, header);
 		font-size: map-get($font-sizes, logo-title);
 		line-height: map-get($line-heights, xs);
@@ -209,8 +226,8 @@ body {
 	&__subtitle {
 		font-family: map-get($font-families, paragraph);
 		font-size: map-get($font-sizes, logo-subtitle);
-		line-height: 13px;
 		letter-spacing: map-get($letter-spacings, m);
+		line-height: 15px;
 		padding-top: 10px;
 		padding-left: 5px;
 
@@ -253,12 +270,8 @@ body {
 		font-size: map-get($font-sizes, paragraph-l);
 		line-height: map-get($line-heights, xl);
 		padding-bottom: 5px;
-		transition-duration: 0.3s;
+		transition-duration: 0.5s;
 		transition-property: color;
-
-		&_active {
-			border-bottom: 3px solid $color-primary ;
-		}
 
 		&:hover {
 			cursor: pointer;
@@ -270,6 +283,11 @@ body {
 
 		&:focus {
 			border-bottom: 3px solid $color-primary ;
+		}
+
+		&_active {
+			border-bottom: 3px solid $color-primary;
+			pointer-events: none;
 		}
 
 		&_light {
@@ -325,7 +343,7 @@ body {
 .about-img {
 	padding-left: 175px;
 	padding-top: 80px;
-	padding-bottom: 98px;
+	padding-bottom: 95px;
 }
 
 .about-text {
@@ -337,11 +355,11 @@ body {
 		padding-top: 95px;
 		padding-right: 175px;
 		padding-left: 120px;
-		padding-bottom: 98px;
+		padding-bottom: 95px;
 	}
 
 	&__paragraph {
-		padding-top: 25px;
+		padding-top: 24px;
 	}
 }
 
@@ -371,7 +389,7 @@ body {
 	}
 
 	&__button {
-		padding-top: 27px;
+		padding-top: 30px;
 	}
 }
 
@@ -436,15 +454,15 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 48px;
-	height: 48px;
+	width: 52px;
+	height: 52px;
 	border-style: solid;
 	border-width: 2px;
 	border-radius: 50px;
 	transition: 0.5s;
 
 	&_in-slider {
-		margin-top: 20px;
+		margin-top: 30px;
 	}
 
 	&_normal {
@@ -476,7 +494,7 @@ body {
 	&__arrow {
 		width: 14px;
 		height: 6px;
-		background: url("../assets/icons/arrow.svg");
+		background-image: url("/shelter/assets/icons/arrow.svg");
 		background-repeat: no-repeat;
 
 		&_left {
@@ -564,11 +582,12 @@ body {
 }
 
 .credit-card {
-	max-width: 335px;
+	max-width: 350px;
 	display: flex;
 	padding: 10px 0px 5px 15px;
 	background-color: $color-primary;
 	border-radius: 9px;
+	transition: 0.5s;
 
 	&:hover {
 		cursor: pointer;
@@ -593,11 +612,12 @@ body {
 		padding-top: 56px;
 	}
 
-	&__contact {
+	&__contact-link {
 		display: flex;
 		align-items: center;
 		transition: 0.5s;
 		padding-top: 40px;
+		text-decoration: none;
 
 		&:hover {
 			cursor: pointer;
@@ -611,10 +631,6 @@ body {
 
 	&__contact-text {
 		padding-left: 20px;
-	}
-
-	&__contact-link {
-		text-decoration: none;
 	}
 
 	&__img {

@@ -5,21 +5,21 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Shelter for pets in Boston</title>
+	<title>Shelter for pets in Boston - Main Page</title>
 	<link rel="stylesheet" href="./css/normalize.css">
 	<link rel="stylesheet" href="./css/main.css">
 	<link rel="icon" href="./assets/icons/pets.ico">
 </head>
 
 <body>
-	<header class="header dark-background">
+	<header class="header dark-background noise-background">
 		<div class="wrapper">
 			<div class="header__container header__container_main">
 				<div class="logo">
 					<a class="logo__link" href="">
-						<div class="logo__title logo__title_primary">
+						<h1 class="logo__title logo__title_primary">
 							Cozy House
-						</div>
+						</h1>
 						<div class="logo__subtitle logo__subtitle_light">
 							Shelter for pets in Boston
 						</div>
@@ -47,7 +47,7 @@
 	</header>
 
 	<main class="main">
-		<section class="section dark-background" id="not-only">
+		<section class="section dark-background noise-background" id="not-only">
 			<div class="wrapper">
 				<div class="layout-2-col">
 					<div class="start-text">
@@ -112,13 +112,10 @@
 						</div>
 
 						<div class="our-friends__slider">
-
 							<div class="pagination-button pagination-button_in-slider pagination-button_normal">
 								<div class="pagination-button__arrow"></div>
 							</div>
-
 							<div class="our-friends__cards">
-
 								<div class="pet-cards">
 									<div class="pet-cards__container">
 
@@ -160,13 +157,10 @@
 
 									</div>
 								</div>
-
 							</div>
-
 							<div class="pagination-button pagination-button_in-slider pagination-button_normal">
 								<div class="pagination-button__arrow pagination-button__arrow_left"></div>
 							</div>
-
 						</div>
 
 						<div class="our-friends__button">
@@ -286,7 +280,7 @@
 		</section>
 	</main>
 
-	<footer class="footer dark-background" id="footer">
+	<footer class="footer dark-background noise-background" id="footer">
 		<div class="wrapper">
 			<div class="layout-3-col">
 				<div class="footer__column">
@@ -294,55 +288,53 @@
 						For questions <br>
 						and suggestions
 					</div>
-					<div class="footer__contact">
+					<a class="footer__contact-link" href="mailto:email@shelter.com">
 						<div class="footer__contact-icon">
 							<img src="./assets/icons/mail.svg" alt="mail-icon">
 						</div>
-						<div class="footer__contact-text">
-							<a href="mailto:email@shelter.com" class="footer__contact-link header-4 header-4_primary">
-								email@shelter.com
-							</a>
+						<div class="footer__contact-text header-4 header-4_primary">
+							email@shelter.com
 						</div>
-					</div>
-					<div class="footer__contact">
+					</a>
+					<a class="footer__contact-link" href="tel:+13 674 567 75 54">
 						<div class="footer__contact-icon">
 							<img src="./assets/icons/phone.svg" alt="phone-icon">
 						</div>
 						<div class="footer__contact-text">
-							<a href="tel:+13 674 567 75 54" class="footer__contact-link header-4 header-4_primary">
+							<div class="header-4 header-4_primary">
 								+13 674 567 75 54
-							</a>
+							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="footer__column">
 					<div class="header-3 header-3_light">
 						We are waiting <br>
 						for your visit
 					</div>
-					<div class="footer__contact footer__contact_location">
+					<a class="footer__contact-link footer__contact-link_location" href="https://goo.gl/maps/eNGUhBGtBpj59NM16"
+						target="_blank">
 						<div class="footer__contact-icon">
 							<img src="./assets/icons/pin.svg" alt="pin-icon">
 						</div>
 						<div class="footer__contact-text">
-							<a href="https://goo.gl/maps/eNGUhBGtBpj59NM16" target="_blank"
-								class="footer__contact-link header-4 header-4_primary">
+							<div class="header-4 header-4_primary">
 								1 Central Street, Boston <br>
 								(entrance from the store)
-							</a>
+							</div>
 						</div>
-					</div>
-					<div class="footer__contact footer__contact_location">
+					</a>
+					<a class="footer__contact-link footer__contact-link_location" href="https://goo.gl/maps/ZtmCuaaowhEaADbs5"
+						target="_blank">
 						<div class="footer__contact-icon">
 							<img src="./assets/icons/pin.svg" alt="pin-icon">
 						</div>
 						<div class="footer__contact-text">
-							<a href="https://goo.gl/maps/ZtmCuaaowhEaADbs5" target="_blank"
-								class="footer__contact-link header-4 header-4_primary">
+							<div class="header-4 header-4_primary">
 								18 South Park, London
-							</a>
+							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="footer__img">
 					<img src="./assets/photos/pets-pages/footer-puppy.png" alt="footer-puppy">
@@ -350,6 +342,7 @@
 			</div>
 		</div>
 	</footer>
+	<script src="js/index.js"></script>
 </body>
 
 </html>
