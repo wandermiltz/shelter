@@ -29,6 +29,10 @@ $font-families: (
 	"paragraph": ('Arial', sans-serif)
 );
 
+$font-weights: (
+	"_normal": 400,
+);
+
 $line-heights: (
 	"xs": 110%,
 	"s": 115%,
@@ -51,6 +55,16 @@ html {
 *::before,
 *::after {
 	box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
 }
 
 body {
@@ -86,17 +100,10 @@ body {
 	}
 }
 
-.layout-2-col {
-	display: flex;
-}
-
-.layout-3-col {
-	display: flex;
-}
-
 .header-2 {
 	color: $color-light-xl;
 	font-family: map-get($font-families, header);
+	font-weight: map-get($font-weights, _normal);
 	font-size: map-get($font-sizes, header-2);
 	line-height: map-get($line-heights, m);
 }
@@ -104,6 +111,7 @@ body {
 .header-3 {
 	font-family: map-get($font-families, header);
 	font-size: map-get($font-sizes, header-3);
+	font-weight: map-get($font-weights, _normal);
 	line-height: map-get($line-heights, m);
 	letter-spacing: map-get($letter-spacings, s);
 
@@ -117,9 +125,9 @@ body {
 }
 
 .header-4 {
-
 	font-family: map-get($font-families, header);
 	font-size: map-get($font-sizes, header-4);
+	font-weight: map-get($font-weights, _normal);
 	line-height: map-get($line-heights, s);
 	letter-spacing: map-get($letter-spacings, s);
 
@@ -136,6 +144,7 @@ body {
 	color: $color-dark-l;
 	font-family: map-get($font-families, header);
 	font-size: map-get($font-sizes, header-5);
+	font-weight: map-get($font-weights, _normal);
 	line-height: map-get($line-heights, s);
 	letter-spacing: map-get($letter-spacings, s);
 }
@@ -143,6 +152,7 @@ body {
 .paragraph-l {
 	font-family: map-get($font-families, paragraph);
 	font-size: map-get($font-sizes, paragraph-l);
+	font-weight: map-get($font-weights, _normal);
 	line-height: map-get($line-heights, xl);
 
 	&_light {
@@ -158,6 +168,7 @@ body {
 	color: $color-dark-m;
 	font-family: map-get($font-families, paragraph);
 	font-size: map-get($font-sizes, paragraph-s);
+	font-weight: map-get($font-weights, _normal);
 	line-height: map-get($line-heights, l);
 	font-style: italic;
 }
@@ -215,10 +226,9 @@ body {
 .logo {
 
 	&__title {
-		margin: 0;
-		font-weight: normal;
 		font-family: map-get($font-families, header);
 		font-size: map-get($font-sizes, logo-title);
+		font-weight: map-get($font-weights, _normal);
 		line-height: map-get($line-heights, xs);
 		letter-spacing: map-get($letter-spacings, s);
 
@@ -235,6 +245,7 @@ body {
 	&__subtitle {
 		font-family: map-get($font-families, paragraph);
 		font-size: map-get($font-sizes, logo-subtitle);
+		font-weight: map-get($font-weights, _normal);
 		letter-spacing: map-get($letter-spacings, m);
 		line-height: 15px;
 		padding-top: 10px;
@@ -277,6 +288,7 @@ body {
 		text-decoration: none;
 		font-family: map-get($font-families, paragraph);
 		font-size: map-get($font-sizes, paragraph-l);
+		font-weight: map-get($font-weights, _normal);
 		line-height: map-get($line-heights, xl);
 		padding-bottom: 5px;
 		transition-duration: 0.5s;
@@ -321,11 +333,20 @@ body {
 	}
 }
 
-.start-text {
+.start {
 
 	&__container {
 		display: flex;
-		justify-content: space-between;
+	}
+
+	&__img {
+		display: flex;
+		align-items: flex-end;
+		padding-top: 30px;
+	}
+
+	&__text {
+		display: flex;
 		flex-direction: column;
 		padding-right: 42px;
 	}
@@ -343,32 +364,31 @@ body {
 	}
 }
 
-.start-img {
-	display: flex;
-	align-items: flex-end;
-	padding-top: 32px;
-}
-
-.about-img {
-	padding-left: 175px;
-	padding-top: 80px;
-	padding-bottom: 95px;
-}
-
-.about-text {
-
+.about {
 	&__container {
 		display: flex;
-		justify-content: start;
-		flex-direction: column;
-		padding-top: 95px;
-		padding-right: 175px;
-		padding-left: 120px;
+		padding-top: 80px;
 		padding-bottom: 95px;
 	}
 
+	&__img {
+		padding-left: 175px;
+	}
+
+	&__title {
+		padding-top: 15px;
+	}
+
+	&__text {
+		display: flex;
+		justify-content: start;
+		flex-direction: column;
+		padding-right: 175px;
+		padding-left: 120px;
+	}
+
 	&__paragraph {
-		padding-top: 24px;
+		padding-top: 25px;
 	}
 }
 
@@ -565,18 +585,22 @@ body {
 	}
 }
 
-.in-addition-img {
-	padding-top: 91px;
-	padding-left: 143px;
-}
+.in-addition {
 
-.in-addition-text {
-
-	padding-left: 30px;
-	padding-right: 160px;
-
-	&__title {
+	&__container {
+		display: flex;
 		padding-top: 80px;
+	}
+
+	&__img {
+		padding-top: 10px;
+		padding-left: 143px;
+	}
+
+	&__text {
+
+		padding-left: 30px;
+		padding-right: 160px;
 	}
 
 	&__subtitle {
@@ -613,6 +637,10 @@ body {
 }
 
 .footer {
+
+	&__container {
+		display: flex;
+	}
 
 	&__column {
 		display: flex;
