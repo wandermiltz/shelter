@@ -337,12 +337,13 @@ body {
 
 	&__container {
 		display: flex;
+		padding-top: 30px;
 	}
 
 	&__img {
 		display: flex;
 		align-items: flex-end;
-		padding-top: 30px;
+
 	}
 
 	&__text {
@@ -352,7 +353,7 @@ body {
 	}
 
 	&__title {
-		padding-top: 195px
+		padding-top: 165px
 	}
 
 	&__paragraph {

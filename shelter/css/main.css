@@ -240,11 +240,11 @@ body {
 
 .start__container {
   display: flex;
+  padding-top: 30px;
 }
 .start__img {
   display: flex;
   align-items: flex-end;
-  padding-top: 30px;
 }
 .start__text {
   display: flex;
@@ -252,7 +252,7 @@ body {
   padding-right: 42px;
 }
 .start__title {
-  padding-top: 195px;
+  padding-top: 165px;
 }
 .start__paragraph {
   padding-top: 40px;
