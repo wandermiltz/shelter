@@ -367,6 +367,7 @@ body {
 }
 
 .about {
+
 	&__container {
 		width: 65%;
 		display: flex;
@@ -728,6 +729,13 @@ body {
 			padding-left: 0px;
 			padding-bottom: 80px;
 		}
+	}
+}
+
+.our-friends {
+
+	.pet-card:nth-child(3) {
+		display: none;
 	}
 }
 
