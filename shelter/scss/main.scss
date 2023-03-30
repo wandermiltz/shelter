@@ -75,22 +75,22 @@ body {
 }
 
 .wrapper {
+	margin: 0 auto;
 	max-width: 1280px;
 	padding-left: 40px;
 	padding-right: 40px;
-	margin: 0 auto;
 }
 
 .background {
 
 	&__start_dark {
-		background: url("../assets/noise_transparent@2x.png"),
+		background: url("../assets/background/noise_transparent@2x.png"),
 			radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),
 			#211F20;
 	}
 
 	&__footer_dark {
-		background: url("../assets/noise_transparent@2x.png"),
+		background: url("../assets/background/noise_transparent@2x.png"),
 			radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),
 			#211F20;
 	}
