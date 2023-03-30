@@ -475,12 +475,14 @@ body {
 
 .footer__container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 40px;
 }
 .footer__column {
   display: flex;
   flex-direction: column;
-  padding-right: 160px;
-  padding-top: 56px;
+  padding-top: 16px;
 }
 .footer__contact-link {
   display: flex;
@@ -500,9 +502,8 @@ body {
   padding-left: 20px;
 }
 .footer__img {
-  display: flex;
-  align-items: flex-end;
-  padding-top: 40px;
+  width: 300px;
+  height: 310px;
   margin-left: 5px;
 }
 
@@ -574,6 +575,18 @@ body {
   .in-addition__text {
     width: 54%;
     padding-bottom: 60px;
+  }
+  .footer__container {
+    justify-content: center;
+    padding-top: 30px;
+  }
+  .footer__column {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    padding-bottom: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 /* Mobile */

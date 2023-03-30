@@ -632,13 +632,15 @@ body {
 
 	&__container {
 		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding-top: 40px;
 	}
 
 	&__column {
 		display: flex;
 		flex-direction: column;
-		padding-right: 160px;
-		padding-top: 56px;
+		padding-top: 16px;
 	}
 
 	&__contact-link {
@@ -663,9 +665,8 @@ body {
 	}
 
 	&__img {
-		display: flex;
-		align-items: flex-end;
-		padding-top: 40px;
+		width: 300px;
+		height: 310px;
 		margin-left: 5px;
 	}
 }
@@ -766,6 +767,23 @@ body {
 		&__text {
 			width: 54%;
 			padding-bottom: 60px;
+		}
+	}
+
+	.footer {
+
+		&__container {
+			justify-content: center;
+			padding-top: 30px;
+		}
+
+		&__column {
+			display: flex;
+			flex-direction: column;
+			padding-top: 0;
+			padding-bottom: 60px;
+			padding-left: 30px;
+			padding-right: 30px;
 		}
 	}
 }
