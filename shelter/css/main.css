@@ -433,23 +433,25 @@ body {
 
 .in-addition__container {
   display: flex;
+  justify-content: center;
   padding-top: 80px;
 }
 .in-addition__img {
-  padding-top: 10px;
-  padding-left: 143px;
+  width: 505px;
+  height: 261px;
+  margin-right: 30px;
+  margin-top: 10px;
 }
 .in-addition__text {
-  padding-left: 30px;
-  padding-right: 160px;
+  width: 32%;
+  padding-bottom: 100px;
 }
 .in-addition__subtitle {
   padding-top: 18px;
   padding-bottom: 20px;
 }
 .in-addition__paragraph {
-  padding-top: 20px;
-  padding-bottom: 100px;
+  padding-top: 22px;
 }
 
 .credit-card {
@@ -549,11 +551,31 @@ body {
     padding-left: 0px;
     padding-bottom: 80px;
   }
+  .our-friends .pet-card:nth-child(3) {
+    display: none;
+  }
+  .help-items__container {
+    max-width: 630px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    -moz-column-gap: 65px;
+         column-gap: 65px;
+  }
+  .in-addition__container {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+  }
+  .in-addition__img {
+    order: 100;
+    margin: 0;
+  }
+  .in-addition__text {
+    width: 54%;
+    padding-bottom: 60px;
+  }
 }
-.our-friends .pet-card:nth-child(3) {
-  display: none;
-}
-
 /* Mobile */
 @media only screen and (max-width: 600px) {
   .wrapper {
