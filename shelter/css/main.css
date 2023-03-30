@@ -406,33 +406,22 @@ body {
 }
 
 .help-items__container {
-  max-width: 1150px;
+  max-width: 1200px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  padding-top: 60px;
   padding-bottom: 100px;
-}
-.help-items__row-1 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-.help-items__row-2 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  -moz-column-gap: 120px;
+       column-gap: 120px;
+  row-gap: 55px;
 }
 
 .help-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 58px;
-  padding-left: 60px;
-  padding-right: 60px;
+  text-align: center;
 }
 .help-item__title {
   padding-top: 25px;
