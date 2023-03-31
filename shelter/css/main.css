@@ -244,18 +244,18 @@ body {
 
 .start__container {
   display: flex;
+  justify-content: space-between;
   padding-top: 60px;
 }
 .start__img {
-  width: 100%;
+  min-width: 698px;
   display: flex;
-  align-self: flex-end;
 }
 .start__text {
+  max-width: 39%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  padding-right: 42px;
 }
 .start__title {
   padding-top: 165px;
@@ -268,9 +268,9 @@ body {
 }
 
 .about__container {
-  width: 65%;
+  width: 73%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding-top: 80px;
   padding-bottom: 100px;
 }
@@ -282,10 +282,10 @@ body {
   padding-top: 15px;
 }
 .about__text {
+  max-width: 50.5%;
   display: flex;
-  justify-content: start;
   flex-direction: column;
-  padding-left: 120px;
+  justify-content: start;
 }
 .about__paragraph {
   padding-top: 25px;
@@ -488,6 +488,9 @@ body {
   flex-direction: column;
   padding-top: 16px;
 }
+.footer__column:nth-child(2) {
+  margin-right: 10px;
+}
 .footer__contact-link {
   display: flex;
   align-items: center;
@@ -508,18 +511,10 @@ body {
 .footer__img {
   width: 300px;
   height: 310px;
-  margin-left: 5px;
 }
 
-/* Small Desktop*/
-@media only screen and (max-width: 1279px) {
-  .start__img {
-    max-width: 100%;
-    min-width: 569px;
-  }
-}
 /* Tablet */
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 1150px) {
   .wrapper {
     min-width: 768px;
     padding-left: 30px;
@@ -533,10 +528,10 @@ body {
   .start__img {
     max-width: 569px;
     min-width: 260px;
+    align-self: flex-end;
   }
   .start__text {
-    padding-left: 124px;
-    padding-right: 124px;
+    max-width: 65%;
     padding-bottom: 100px;
   }
   .start__title {
@@ -546,6 +541,7 @@ body {
     align-self: center;
   }
   .about__container {
+    width: 100%;
     flex-direction: column;
     align-items: center;
   }
@@ -556,8 +552,7 @@ body {
     padding: 0px;
   }
   .about__text {
-    width: 60%;
-    padding-left: 0px;
+    max-width: 61%;
     padding-bottom: 80px;
   }
   .our-friends .pet-card:nth-child(3) {
@@ -585,16 +580,15 @@ body {
     padding-bottom: 60px;
   }
   .footer__container {
-    justify-content: center;
+    justify-content: space-around;
     padding-top: 30px;
   }
   .footer__column {
+    max-width: 50%;
     display: flex;
     flex-direction: column;
     padding-top: 0;
     padding-bottom: 60px;
-    padding-left: 30px;
-    padding-right: 30px;
   }
 }
 /* Mobile */
@@ -607,6 +601,9 @@ body {
   .header-2 {
     font-size: 25px;
     letter-spacing: 0.06em;
+  }
+  .header-3 {
+    font-size: 25px;
   }
   .navigation {
     display: none;
@@ -638,5 +635,23 @@ body {
   }
   .start__img {
     max-width: 260px;
+  }
+  .about__container {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  .about__text {
+    max-width: 90%;
+    padding-bottom: 40px;
+  }
+  .about__paragraph {
+    text-align: justify;
+  }
+  .about__title {
+    text-align: center;
+  }
+  .about__img {
+    width: 260px;
+    height: 353.6px;
   }
 }/*# sourceMappingURL=main.css.map */

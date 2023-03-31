@@ -341,20 +341,20 @@ body {
 
 	&__container {
 		display: flex;
+		justify-content: space-between;
 		padding-top: 60px;
 	}
 
 	&__img {
-		width: 100%;
+		min-width: 698px;
 		display: flex;
-		align-self: flex-end;
 	}
 
 	&__text {
+		max-width: 39%;
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: column;
-		padding-right: 42px;
 	}
 
 	&__title {
@@ -373,9 +373,9 @@ body {
 .about {
 
 	&__container {
-		width: 65%;
+		width: 73%;
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		padding-top: 80px;
 		padding-bottom: 100px;
 	}
@@ -390,10 +390,10 @@ body {
 	}
 
 	&__text {
+		max-width: 50.5%;
 		display: flex;
-		justify-content: start;
 		flex-direction: column;
-		padding-left: 120px;
+		justify-content: start;
 	}
 
 	&__paragraph {
@@ -647,6 +647,10 @@ body {
 		padding-top: 16px;
 	}
 
+	&__column:nth-child(2) {
+		margin-right: 10px;
+	}
+
 	&__contact-link {
 		display: flex;
 		align-items: center;
@@ -671,24 +675,23 @@ body {
 	&__img {
 		width: 300px;
 		height: 310px;
-		margin-left: 5px;
 	}
 }
 
-/* Small Desktop*/
-@media only screen and (max-width: 1279px) {
+// /* Small Desktop*/
+// @media only screen and (max-width: 1279px) {
 
-	.start {
+// 	.start {
 
-		&__img {
-			max-width: 100%;
-			min-width: 569px;
-		}
-	}
-}
+// 		&__img {
+// 			max-width: 100%;
+// 			min-width: 569px;
+// 		}
+// 	}
+// }
 
 /* Tablet */
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 1150px) {
 
 	.wrapper {
 		min-width: 768px;
@@ -707,11 +710,11 @@ body {
 		&__img {
 			max-width: 569px;
 			min-width: 260px;
+			align-self: flex-end;
 		}
 
 		&__text {
-			padding-left: 124px;
-			padding-right: 124px;
+			max-width: 65%;
 			padding-bottom: 100px;
 		}
 
@@ -727,6 +730,7 @@ body {
 	.about {
 
 		&__container {
+			width: 100%;
 			flex-direction: column;
 			align-items: center;
 		}
@@ -740,8 +744,7 @@ body {
 		}
 
 		&__text {
-			width: 60%;
-			padding-left: 0px;
+			max-width: 61%;
 			padding-bottom: 80px;
 		}
 	}
@@ -786,17 +789,16 @@ body {
 	.footer {
 
 		&__container {
-			justify-content: center;
+			justify-content: space-around;
 			padding-top: 30px;
 		}
 
 		&__column {
+			max-width: 50%;
 			display: flex;
 			flex-direction: column;
 			padding-top: 0;
 			padding-bottom: 60px;
-			padding-left: 30px;
-			padding-right: 30px;
 		}
 	}
 }
@@ -812,7 +814,11 @@ body {
 
 	.header-2 {
 		font-size: 25px;
-		letter-spacing: 0.06em
+		letter-spacing: 0.06em;
+	}
+
+	.header-3 {
+		font-size: 25px;
 	}
 
 	.navigation {
@@ -855,6 +861,32 @@ body {
 
 		&__img {
 			max-width: 260px;
+		}
+	}
+
+	.about {
+
+		&__container {
+			padding-top: 42px;
+			padding-bottom: 42px;
+		}
+
+		&__text {
+			max-width: 90%;
+			padding-bottom: 40px;
+		}
+
+		&__paragraph {
+			text-align: justify;
+		}
+
+		&__title {
+			text-align: center;
+		}
+
+		&__img {
+			width: 260px;
+			height: 353.6px;
 		}
 	}
 }
