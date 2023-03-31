@@ -190,6 +190,10 @@ body {
   text-shadow: 0 0 20px #F1CDB3;
 }
 
+.burger {
+  display: none;
+}
+
 .navigation__list {
   display: flex;
   flex-wrap: wrap;
@@ -249,6 +253,7 @@ body {
 }
 .start__text {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   padding-right: 42px;
 }
@@ -527,11 +532,9 @@ body {
   }
   .start__img {
     max-width: 569px;
+    min-width: 260px;
   }
   .start__text {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
     padding-left: 124px;
     padding-right: 124px;
     padding-bottom: 100px;
@@ -601,7 +604,39 @@ body {
     padding-left: 10px;
     padding-right: 10px;
   }
+  .header-2 {
+    font-size: 25px;
+    letter-spacing: 0.06em;
+  }
   .navigation {
     display: none;
+  }
+  .header__container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .burger {
+    display: block;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    background: url("../assets/icons/burger.svg") no-repeat center;
+    align-self: center;
+  }
+  .start__container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .start__text {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 105px;
+  }
+  .start__img {
+    max-width: 260px;
   }
 }/*# sourceMappingURL=main.css.map */
