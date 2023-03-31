@@ -341,6 +341,7 @@ body {
 
 	&__container {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		padding-top: 60px;
 	}
@@ -407,12 +408,12 @@ body {
 		display: flex;
 		align-items: center;
 		flex-direction: column;
+		padding-top: 80px;
 		padding-bottom: 100px;
 	}
 
 	&__title {
 		text-align: center;
-		padding-top: 80px;
 	}
 
 	&__cards {
@@ -596,7 +597,7 @@ body {
 	}
 
 	&__text {
-		width: 32%;
+		max-width: 32%;
 		padding-bottom: 100px;
 	}
 
@@ -781,7 +782,7 @@ body {
 		}
 
 		&__text {
-			width: 54%;
+			max-width: 54%;
 			padding-bottom: 60px;
 		}
 	}
@@ -844,18 +845,12 @@ body {
 
 	.start {
 
-		&__container {
-			flex-direction: column;
-			align-items: center;
-		}
-
 		&__text {
+			max-width: 100%;
 			display: flex;
 			flex-wrap: wrap;
 			flex-direction: column;
 			text-align: center;
-			padding-left: 0;
-			padding-right: 0;
 			padding-bottom: 105px;
 		}
 
@@ -867,6 +862,7 @@ body {
 	.about {
 
 		&__container {
+			justify-content: flex-start;
 			padding-top: 42px;
 			padding-bottom: 42px;
 		}
@@ -887,6 +883,54 @@ body {
 		&__img {
 			width: 260px;
 			height: 353.6px;
+		}
+	}
+
+
+	.our-friends {
+
+		&__container {
+			padding-top: 42px;
+			padding-bottom: 42px;
+		}
+
+		&__cards {
+			width: 85%;
+			order: -1;
+		}
+
+		&__slider {
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+		}
+
+		&__button {
+			padding-top: 40px;
+		}
+	}
+
+	.pet-cards {
+
+		&__container {
+			justify-content: center;
+			padding-top: 42px;
+		}
+	}
+
+	.pet-card {
+		&__container {
+			margin: 0;
+		}
+	}
+
+	.pet-card:nth-child(2) {
+		display: none;
+	}
+
+	.pagination-button {
+
+		&_in-slider {
+			margin-top: 20px;
 		}
 	}
 }

@@ -244,6 +244,7 @@ body {
 
 .start__container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding-top: 60px;
 }
@@ -295,11 +296,11 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding-top: 80px;
   padding-bottom: 100px;
 }
 .our-friends__title {
   text-align: center;
-  padding-top: 80px;
 }
 .our-friends__cards {
   width: 82%;
@@ -447,7 +448,7 @@ body {
   margin-top: 10px;
 }
 .in-addition__text {
-  width: 32%;
+  max-width: 32%;
   padding-bottom: 100px;
 }
 .in-addition__subtitle {
@@ -576,7 +577,7 @@ body {
     margin: 0;
   }
   .in-addition__text {
-    width: 54%;
+    max-width: 54%;
     padding-bottom: 60px;
   }
   .footer__container {
@@ -620,23 +621,19 @@ body {
     background: url("../assets/icons/burger.svg") no-repeat center;
     align-self: center;
   }
-  .start__container {
-    flex-direction: column;
-    align-items: center;
-  }
   .start__text {
+    max-width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     text-align: center;
-    padding-left: 0;
-    padding-right: 0;
     padding-bottom: 105px;
   }
   .start__img {
     max-width: 260px;
   }
   .about__container {
+    justify-content: flex-start;
     padding-top: 42px;
     padding-bottom: 42px;
   }
@@ -653,5 +650,33 @@ body {
   .about__img {
     width: 260px;
     height: 353.6px;
+  }
+  .our-friends__container {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  .our-friends__cards {
+    width: 85%;
+    order: -1;
+  }
+  .our-friends__slider {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .our-friends__button {
+    padding-top: 40px;
+  }
+  .pet-cards__container {
+    justify-content: center;
+    padding-top: 42px;
+  }
+  .pet-card__container {
+    margin: 0;
+  }
+  .pet-card:nth-child(2) {
+    display: none;
+  }
+  .pagination-button_in-slider {
+    margin-top: 20px;
   }
 }/*# sourceMappingURL=main.css.map */
