@@ -602,19 +602,20 @@ body {
 	}
 
 	&__subtitle {
-		padding-top: 18px;
+		padding-top: 20px;
 		padding-bottom: 20px;
 	}
 
 	&__paragraph {
-		padding-top: 22px;
+		padding-top: 20px;
 	}
 }
 
 .credit-card {
+
 	max-width: 350px;
 	display: flex;
-	padding: 10px 0px 5px 15px;
+	padding: 10px 5px 10px 15px;
 	background-color: $color-primary;
 	border-radius: 9px;
 	transition: 0.5s;
@@ -630,6 +631,11 @@ body {
 
 	&__number {
 		padding-left: 15px;
+	}
+
+	&__icon {
+		display: flex;
+		align-items: center;
 	}
 }
 
@@ -803,7 +809,7 @@ body {
 	}
 }
 
-/* Mobile */
+/* Mobile Large */
 @media only screen and (max-width: 760px) {
 
 	.wrapper {
@@ -845,11 +851,7 @@ body {
 	.start {
 
 		&__text {
-			max-width: 100%;
-			display: flex;
 			flex-wrap: wrap;
-			flex-direction: column;
-			text-align: center;
 			padding-bottom: 105px;
 		}
 
@@ -964,9 +966,53 @@ body {
 
 	.in-addition {
 
+		&__container {
+			padding-top: 42px;
+			padding-bottom: 42px;
+		}
+
 		&__img {
 			width: 260px;
 			height: 135.2px
+		}
+
+		&__text {
+			max-width: 70%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding-bottom: 42px;
+		}
+
+		&__title {
+			text-align: center;
+		}
+
+		&__subtitle {
+			letter-spacing: 0;
+			text-align: center;
+			padding-bottom: 25px;
+		}
+
+		&__paragraph {
+			text-align: justify;
+		}
+	}
+
+	.credit-card {
+
+		align-self: center;
+		padding: 10px 15px;
+
+		max-width: 281px;
+		margin: 0;
+
+		&__link {
+			font-size: 15px;
+		}
+
+		&__number {
+			align-self: center;
 		}
 	}
 }
@@ -975,6 +1021,12 @@ body {
 /* Mobile Small*/
 @media only screen and (max-width: 420px) {
 
+	.start {
+		&__text {
+			max-width: 100%;
+			text-align: center;
+		}
+	}
 
 	.help-items {
 
@@ -986,6 +1038,13 @@ body {
 			column-gap: 30px;
 			row-gap: 27px;
 			padding-top: 42px;
+		}
+	}
+
+	.in-addition {
+
+		&__text {
+			max-width: 95%;
 		}
 	}
 }

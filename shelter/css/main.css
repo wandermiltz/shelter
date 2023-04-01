@@ -452,17 +452,17 @@ body {
   padding-bottom: 100px;
 }
 .in-addition__subtitle {
-  padding-top: 18px;
+  padding-top: 20px;
   padding-bottom: 20px;
 }
 .in-addition__paragraph {
-  padding-top: 22px;
+  padding-top: 20px;
 }
 
 .credit-card {
   max-width: 350px;
   display: flex;
-  padding: 10px 0px 5px 15px;
+  padding: 10px 5px 10px 15px;
   background-color: #F1CDB3;
   border-radius: 9px;
   transition: 0.5s;
@@ -476,6 +476,10 @@ body {
 }
 .credit-card__number {
   padding-left: 15px;
+}
+.credit-card__icon {
+  display: flex;
+  align-items: center;
 }
 
 .footer__container {
@@ -603,7 +607,7 @@ body {
     padding-bottom: 60px;
   }
 }
-/* Mobile */
+/* Mobile Large */
 @media only screen and (max-width: 760px) {
   .wrapper {
     min-width: 320px;
@@ -633,11 +637,7 @@ body {
     align-self: center;
   }
   .start__text {
-    max-width: 100%;
-    display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    text-align: center;
     padding-bottom: 105px;
   }
   .start__img {
@@ -708,13 +708,51 @@ body {
     padding-top: 18px;
     text-align: center;
   }
+  .in-addition__container {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
   .in-addition__img {
     width: 260px;
     height: 135.2px;
   }
+  .in-addition__text {
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 42px;
+  }
+  .in-addition__title {
+    text-align: center;
+  }
+  .in-addition__subtitle {
+    letter-spacing: 0;
+    text-align: center;
+    padding-bottom: 25px;
+  }
+  .in-addition__paragraph {
+    text-align: justify;
+  }
+  .credit-card {
+    align-self: center;
+    padding: 10px 15px;
+    max-width: 281px;
+    margin: 0;
+  }
+  .credit-card__link {
+    font-size: 15px;
+  }
+  .credit-card__number {
+    align-self: center;
+  }
 }
 /* Mobile Small*/
 @media only screen and (max-width: 420px) {
+  .start__text {
+    max-width: 100%;
+    text-align: center;
+  }
   .help-items__container {
     max-width: 100%;
     display: grid;
@@ -724,5 +762,8 @@ body {
          column-gap: 30px;
     row-gap: 27px;
     padding-top: 42px;
+  }
+  .in-addition__text {
+    max-width: 95%;
   }
 }/*# sourceMappingURL=main.css.map */
