@@ -656,6 +656,9 @@ body {
     background: url("../assets/icons/burger.svg") no-repeat center;
     align-self: center;
   }
+  .burger_pets-page {
+    background: url("../assets/icons/burger-black.svg") no-repeat center;
+  }
   .start__text {
     flex-wrap: wrap;
     padding-bottom: 105px;
@@ -701,10 +704,16 @@ body {
     justify-content: center;
     padding-top: 42px;
   }
-  .pet-card__container {
-    margin: 0;
+  .pet-cards__container_pets-page {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
   }
-  .pet-card:nth-child(2) {
+  .pet-cards__container_main-page .pet-card:nth-child(2) {
+    display: none;
+  }
+  .pet-cards__container_pets-page .pet-card:nth-child(4),
+  .pet-cards__container_pets-page .pet-card:nth-child(5),
+  .pet-cards__container_pets-page .pet-card:nth-child(6) {
     display: none;
   }
   .pagination-button_in-slider {
@@ -805,6 +814,10 @@ body {
   }
   .in-addition__text {
     max-width: 95%;
+  }
+  .paginator__item {
+    margin-left: 5px;
+    margin-right: 5px;
   }
   .footer__contact-link_location {
     align-self: flex-start;

@@ -453,7 +453,6 @@ body {
 		border-radius: 9px;
 		margin-bottom: 32px;
 
-
 		&:hover {
 			cursor: pointer;
 			box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
@@ -488,6 +487,7 @@ body {
 }
 
 .pagination-button {
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -569,6 +569,7 @@ body {
 }
 
 .help-item {
+
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -692,6 +693,7 @@ body {
 @media only screen and (max-width: 1150px) {
 
 	.wrapper {
+
 		min-width: 768px;
 		padding-left: 30px;
 		padding-right: 30px;
@@ -769,12 +771,14 @@ body {
 	}
 
 	.paginator {
+
 		padding-top: 10px;
 	}
 
 	@media only screen and (min-width: 800px) {
 
 		.pet-cards {
+
 			&__container {
 				justify-content: space-evenly;
 			}
@@ -840,21 +844,25 @@ body {
 @media only screen and (max-width: 760px) {
 
 	.wrapper {
+
 		min-width: 320px;
 		padding-left: 10px;
 		padding-right: 10px;
 	}
 
 	.header-2 {
+
 		font-size: 25px;
 		letter-spacing: 0.06em;
 	}
 
 	.header-3 {
+
 		font-size: 25px;
 	}
 
 	.navigation {
+
 		display: none;
 	}
 
@@ -867,12 +875,17 @@ body {
 	}
 
 	.burger {
+
 		display: block;
 		width: 30px;
 		height: 22px;
 		cursor: pointer;
 		background: url("../assets/icons/burger.svg") no-repeat center;
 		align-self: center;
+
+		&_pets-page {
+			background: url("../assets/icons/burger-black.svg") no-repeat center;
+		}
 	}
 
 	.start {
@@ -944,13 +957,23 @@ body {
 		}
 	}
 
-	.pet-card {
+	.pet-cards {
+
 		&__container {
-			margin: 0;
+			&_pets-page {
+				display: grid;
+				grid-template-columns: repeat(1, 1fr);
+			}
 		}
 	}
 
-	.pet-card:nth-child(2) {
+	.pet-cards__container_main-page .pet-card:nth-child(2) {
+		display: none;
+	}
+
+	.pet-cards__container_pets-page .pet-card:nth-child(4),
+	.pet-cards__container_pets-page .pet-card:nth-child(5),
+	.pet-cards__container_pets-page .pet-card:nth-child(6) {
 		display: none;
 	}
 
@@ -979,6 +1002,7 @@ body {
 	}
 
 	.help-item {
+
 		&__icon img {
 			width: 50px;
 			height: 50px;
@@ -1072,11 +1096,11 @@ body {
 	}
 }
 
-
 /* Mobile Small*/
 @media only screen and (max-width: 420px) {
 
 	.start {
+
 		&__text {
 			max-width: 100%;
 			text-align: center;
@@ -1103,7 +1127,16 @@ body {
 		}
 	}
 
+	.paginator {
+
+		&__item {
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+	}
+
 	.footer {
+
 		&__contact-link_location {
 			align-self: flex-start;
 			padding-top: 40px;
