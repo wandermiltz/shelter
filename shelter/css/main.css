@@ -190,6 +190,10 @@ body {
   text-shadow: 0 0 20px #F1CDB3;
 }
 
+.burger {
+  display: none;
+}
+
 .navigation__list {
   display: flex;
   flex-wrap: wrap;
@@ -240,17 +244,17 @@ body {
 
 .start__container {
   display: flex;
+  justify-content: space-between;
   padding-top: 60px;
 }
 .start__img {
-  width: 100%;
-  display: flex;
-  align-self: flex-end;
+  min-width: 698px;
 }
 .start__text {
+  max-width: 39%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  padding-right: 42px;
 }
 .start__title {
   padding-top: 165px;
@@ -263,9 +267,9 @@ body {
 }
 
 .about__container {
-  width: 65%;
+  width: 73%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding-top: 80px;
   padding-bottom: 100px;
 }
@@ -277,10 +281,10 @@ body {
   padding-top: 15px;
 }
 .about__text {
+  max-width: 50.5%;
   display: flex;
-  justify-content: start;
   flex-direction: column;
-  padding-left: 120px;
+  justify-content: start;
 }
 .about__paragraph {
   padding-top: 25px;
@@ -290,11 +294,11 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 100px;
+  padding-top: 80px;
+  padding-bottom: 76px;
 }
 .our-friends__title {
   text-align: center;
-  padding-top: 80px;
 }
 .our-friends__cards {
   width: 82%;
@@ -307,13 +311,13 @@ body {
 }
 .our-friends__button {
   padding-top: 30px;
+  padding-bottom: 24px;
 }
 
 .pet-cards__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
   align-content: space-between;
   padding-top: 60px;
 }
@@ -399,12 +403,13 @@ body {
 }
 
 .help__container {
+  padding-top: 80px;
+  padding-bottom: 100px;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 .help__title {
-  padding-top: 80px;
   text-align: center;
 }
 
@@ -414,7 +419,6 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   padding-top: 60px;
-  padding-bottom: 100px;
   -moz-column-gap: 120px;
        column-gap: 120px;
   row-gap: 55px;
@@ -442,21 +446,21 @@ body {
   margin-top: 10px;
 }
 .in-addition__text {
-  width: 32%;
+  max-width: 32%;
   padding-bottom: 100px;
 }
 .in-addition__subtitle {
-  padding-top: 18px;
+  padding-top: 20px;
   padding-bottom: 20px;
 }
 .in-addition__paragraph {
-  padding-top: 22px;
+  padding-top: 20px;
 }
 
 .credit-card {
   max-width: 350px;
   display: flex;
-  padding: 10px 0px 5px 15px;
+  padding: 10px 5px 10px 15px;
   background-color: #F1CDB3;
   border-radius: 9px;
   transition: 0.5s;
@@ -471,6 +475,10 @@ body {
 .credit-card__number {
   padding-left: 15px;
 }
+.credit-card__icon {
+  display: flex;
+  align-items: center;
+}
 
 .footer__container {
   display: flex;
@@ -481,7 +489,11 @@ body {
 .footer__column {
   display: flex;
   flex-direction: column;
+  max-width: 30%;
   padding-top: 16px;
+}
+.footer__column:nth-child(2) {
+  margin-right: 20px;
 }
 .footer__contact-link {
   display: flex;
@@ -497,24 +509,19 @@ body {
 .footer__contact-link_location {
   padding-top: 32px;
 }
+.footer__title {
+  max-width: 87%;
+}
 .footer__contact-text {
   padding-left: 20px;
 }
 .footer__img {
   width: 300px;
   height: 310px;
-  margin-left: 5px;
 }
 
-/* Small Desktop*/
-@media only screen and (max-width: 1279px) {
-  .start__img {
-    max-width: 100%;
-    min-width: 569px;
-  }
-}
 /* Tablet */
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 1150px) {
   .wrapper {
     min-width: 768px;
     padding-left: 30px;
@@ -527,13 +534,11 @@ body {
   }
   .start__img {
     max-width: 569px;
+    min-width: 260px;
+    align-self: flex-end;
   }
   .start__text {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    padding-left: 124px;
-    padding-right: 124px;
+    max-width: 65%;
     padding-bottom: 100px;
   }
   .start__title {
@@ -543,6 +548,7 @@ body {
     align-self: center;
   }
   .about__container {
+    width: 100%;
     flex-direction: column;
     align-items: center;
   }
@@ -553,13 +559,32 @@ body {
     padding: 0px;
   }
   .about__text {
-    width: 60%;
-    padding-left: 0px;
+    max-width: 61%;
     padding-bottom: 80px;
   }
-  .our-friends .pet-card:nth-child(3) {
+  .pet-cards__container_main-page .pet-card:nth-child(3) {
     display: none;
   }
+  .pet-cards__container_pets-page .pet-card:nth-child(7),
+  .pet-cards__container_pets-page .pet-card:nth-child(8) {
+    display: none;
+  }
+  .pet-cards__container_pets-page {
+    padding-top: 30px;
+    justify-content: space-evenly;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .paginator {
+    padding-top: 10px;
+  }
+}
+@media only screen and (max-width: 1150px) and (min-width: 800px) {
+  .pet-cards__container {
+    justify-content: space-evenly;
+  }
+}
+@media only screen and (max-width: 1150px) {
   .help-items__container {
     max-width: 630px;
     display: grid;
@@ -568,6 +593,8 @@ body {
     -moz-column-gap: 65px;
          column-gap: 65px;
   }
+}
+@media only screen and (max-width: 1150px) {
   .in-addition__container {
     flex-direction: column;
     align-items: center;
@@ -578,30 +605,222 @@ body {
     margin: 0;
   }
   .in-addition__text {
-    width: 54%;
+    max-width: 54%;
     padding-bottom: 60px;
   }
+}
+@media only screen and (max-width: 1150px) {
   .footer__container {
     justify-content: center;
     padding-top: 30px;
   }
   .footer__column {
-    display: flex;
-    flex-direction: column;
+    max-width: 45%;
     padding-top: 0;
     padding-bottom: 60px;
-    padding-left: 30px;
-    padding-right: 30px;
+    margin-left: 20px;
+  }
+  .footer__column:nth-child(2) {
+    margin-right: 0;
+  }
+  .footer__title {
+    max-width: 90%;
   }
 }
-/* Mobile */
-@media only screen and (max-width: 767px) {
+/* Mobile Large */
+@media only screen and (max-width: 760px) {
   .wrapper {
     min-width: 320px;
     padding-left: 10px;
     padding-right: 10px;
   }
+  .header-2 {
+    font-size: 25px;
+    letter-spacing: 0.06em;
+  }
+  .header-3 {
+    font-size: 25px;
+  }
   .navigation {
     display: none;
+  }
+  .header__container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .burger {
+    display: block;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    background: url("../assets/icons/burger.svg") no-repeat center;
+    align-self: center;
+  }
+  .burger_pets-page {
+    background: url("../assets/icons/burger-black.svg") no-repeat center;
+  }
+  .start__text {
+    flex-wrap: wrap;
+    padding-bottom: 105px;
+  }
+  .start__img {
+    max-width: 260px;
+  }
+  .about__container {
+    justify-content: flex-start;
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  .about__text {
+    max-width: 90%;
+    padding-bottom: 40px;
+  }
+  .about__paragraph {
+    text-align: justify;
+  }
+  .about__title {
+    text-align: center;
+  }
+  .about__img {
+    width: 260px;
+    height: 353.6px;
+  }
+  .our-friends__container {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  .our-friends__cards {
+    min-width: 100%;
+    order: -1;
+  }
+  .our-friends__slider {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .our-friends__button {
+    padding-top: 40px;
+  }
+  .pet-cards__container {
+    justify-content: center;
+    padding-top: 42px;
+  }
+  .pet-cards__container_pets-page {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .pet-cards__container_main-page .pet-card:nth-child(2) {
+    display: none;
+  }
+  .pet-cards__container_pets-page .pet-card:nth-child(4),
+  .pet-cards__container_pets-page .pet-card:nth-child(5),
+  .pet-cards__container_pets-page .pet-card:nth-child(6) {
+    display: none;
+  }
+  .pagination-button_in-slider {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .help__container {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  .help-items__container {
+    max-width: 90%;
+  }
+  .help-item__icon img {
+    width: 50px;
+    height: 50px;
+  }
+  .help-item__title {
+    font-size: 15px;
+    padding-top: 18px;
+    text-align: center;
+  }
+  .in-addition__container {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  .in-addition__img {
+    width: 260px;
+    height: 135.2px;
+  }
+  .in-addition__text {
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 42px;
+  }
+  .in-addition__title {
+    text-align: center;
+  }
+  .in-addition__subtitle {
+    letter-spacing: 0;
+    text-align: center;
+    padding-bottom: 25px;
+  }
+  .in-addition__paragraph {
+    text-align: justify;
+  }
+  .credit-card {
+    align-self: center;
+    padding: 10px 15px;
+    max-width: 281px;
+    margin: 0;
+  }
+  .credit-card__link {
+    font-size: 15px;
+  }
+  .credit-card__number {
+    align-self: center;
+  }
+  .footer__container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer__column {
+    max-width: 100%;
+    padding-bottom: 35px;
+    align-items: center;
+    margin: 0;
+  }
+  .footer__column:nth-child(2) {
+    margin-right: 0;
+  }
+  .footer__title {
+    text-align: center;
+  }
+  .footer__img {
+    width: 260px;
+    height: 269px;
+  }
+}
+/* Mobile Small*/
+@media only screen and (max-width: 420px) {
+  .start__text {
+    max-width: 100%;
+    text-align: center;
+  }
+  .help-items__container {
+    max-width: 100%;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+    row-gap: 27px;
+    padding-top: 42px;
+  }
+  .in-addition__text {
+    max-width: 95%;
+  }
+  .paginator__item {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .footer__contact-link_location {
+    align-self: flex-start;
+    padding-top: 40px;
   }
 }/*# sourceMappingURL=main.css.map */
