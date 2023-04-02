@@ -281,11 +281,12 @@ body {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
+		justify-content: space-between;
 		list-style: none;
 	}
 
 	&__item {
-		margin-left: 35px;
+		padding-left: 35px;
 	}
 
 	&__link {
@@ -479,6 +480,7 @@ body {
 
 	display: flex;
 	padding-top: 30px;
+	padding-bottom: 20px;
 
 	&__item {
 		margin-left: 10px;
@@ -694,7 +696,6 @@ body {
 
 	.wrapper {
 
-		min-width: 768px;
 		padding-left: 30px;
 		padding-right: 30px;
 	}
@@ -772,6 +773,7 @@ body {
 
 	.paginator {
 
+		padding-bottom: 0px;
 		padding-top: 10px;
 	}
 
@@ -845,7 +847,6 @@ body {
 
 	.wrapper {
 
-		min-width: 320px;
 		padding-left: 10px;
 		padding-right: 10px;
 	}
@@ -946,23 +947,28 @@ body {
 
 		&__button {
 			padding-top: 40px;
+			padding-bottom: 0px;
+		}
+	}
+
+	.pet-card {
+
+		&__container {
+			margin: 0;
 		}
 	}
 
 	.pet-cards {
 
 		&__container {
+
 			justify-content: center;
 			padding-top: 42px;
-		}
-	}
 
-	.pet-cards {
-
-		&__container {
 			&_pets-page {
 				display: grid;
 				grid-template-columns: repeat(1, 1fr);
+				row-gap: 30px;
 			}
 		}
 	}
@@ -1128,6 +1134,8 @@ body {
 	}
 
 	.paginator {
+
+		padding-top: 45px;
 
 		&__item {
 			margin-left: 5px;
