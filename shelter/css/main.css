@@ -630,7 +630,7 @@ body {
   }
 }
 /* Mobile Large */
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 767px) {
   .wrapper {
     padding-left: 10px;
     padding-right: 10px;
