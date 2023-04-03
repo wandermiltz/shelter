@@ -523,7 +523,7 @@ body {
 }
 
 /* Tablet */
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1200px) {
   .wrapper {
     padding-left: 30px;
     padding-right: 30px;
@@ -581,12 +581,12 @@ body {
     padding-top: 10px;
   }
 }
-@media only screen and (max-width: 1150px) and (min-width: 800px) {
+@media only screen and (max-width: 1200px) and (min-width: 800px) {
   .pet-cards__container {
     justify-content: space-evenly;
   }
 }
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1200px) {
   .help-items__container {
     max-width: 630px;
     display: grid;
@@ -596,7 +596,7 @@ body {
          column-gap: 65px;
   }
 }
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1200px) {
   .in-addition__container {
     flex-direction: column;
     align-items: center;
@@ -611,7 +611,7 @@ body {
     padding-bottom: 60px;
   }
 }
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1200px) {
   .footer__container {
     justify-content: center;
     padding-top: 30px;
