@@ -892,6 +892,10 @@ body {
 			&_active {
 				transform: translateX(-80%);
 			}
+
+			&_pets-page {
+				background-color: #fff;
+			}
 		}
 
 		&__item {
@@ -901,6 +905,7 @@ body {
 
 		&__link {
 			font-size: 32px;
+			white-space: nowrap;
 		}
 
 		&__burger {

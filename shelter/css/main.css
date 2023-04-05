@@ -666,12 +666,16 @@ body {
   .navigation__list_active {
     transform: translateX(-80%);
   }
+  .navigation__list_pets-page {
+    background-color: #fff;
+  }
   .navigation__item {
     margin-top: 40px;
     padding: 0;
   }
   .navigation__link {
     font-size: 32px;
+    white-space: nowrap;
   }
   .navigation__burger {
     display: block;
