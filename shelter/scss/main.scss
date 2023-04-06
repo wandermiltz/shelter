@@ -100,6 +100,22 @@ body {
 	}
 }
 
+.darken {
+	display: none;
+	position: absolute;
+	z-index: 200;
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+
+	&_active {
+		display: block;
+	}
+
+}
+
 .header-2 {
 	color: $color-light-xl;
 	font-family: map-get($font-families, header);
@@ -276,6 +292,7 @@ body {
 }
 
 .navigation {
+	z-index: 10;
 
 	&__list {
 		display: flex;
@@ -916,7 +933,7 @@ body {
 			height: 22px;
 			top: 20px;
 			right: 0;
-			z-index: 100;
+			z-index: 10;
 			border-top: 2px solid $color-primary;
 			border-bottom: 2px solid $color-primary;
 			cursor: pointer;
