@@ -460,7 +460,25 @@ body {
 	}
 }
 
+@keyframes pet-card {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
 .pet-card {
+
+	animation-name: pet-card;
+	animation-duration: 0.7s;
+	animation-timing-function: linear;
 
 	&__container {
 		display: flex;
