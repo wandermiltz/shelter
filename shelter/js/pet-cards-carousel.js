@@ -1,33 +1,56 @@
 const petCardsContainer = document.getElementById('pet-cards-container');
 
-async function getPets() {
-
+async function getPetCardsData() {
 	const petCards = './data/pet-cards.json';
 	const res = await fetch(petCards);
 	const data = await res.json();
-
-	let img = data[0].img;
-	let name = data[0].name;
-	let type = data[0].type;
-	let breed = data[0].breed;
-	let description = data[0].description;
-	let age = data[0].age;
-	let inoculations = data[0].inoculations;
-	let diseases = data[0].diseases;
-	let parasites = data[0].parasites;
-
-	let html = `<div>
-	<img src="${img}" alt="${name} - ${type} - ${breed}">
-	<div>${name}</div>
-	<div>${type} - ${breed}</div>
-	<div>${description}</div>
-	<div>Age: ${age}</div>
-	<div>Inoculations: ${inoculations}</div>
-	<div>Diseases: ${diseases}</div>
-	<div>Parasites: ${parasites}</div>
-	</div>`;
-	petCardsContainer.insertAdjacentHTML('afterbegin', html);
+	return data;
 }
+
+async function generatePetCardHtml(petCardIndex) {
+	const data = await getPetCardsData();
+	// console.log(data);
+	let name = data[petCardIndex].name;
+	let img = data[petCardIndex].img;
+	let type = data[petCardIndex].type;
+	let petCardHtml = `<div class="pet-card">
+			<div class="pet-card__container">
+				<div class="pet-card__img">
+					<img src="${img}" alt="${name} - ${type}">
+				</div>
+				<div class="pet-card__title header-4 header-4_dark">${name}</div>
+				<div class="pet-card__button">
+					<button class="button button_bordered">Learn more</button>
+				</div>
+			</div>
+		</div>`
+	// console.log(petCardHtml);
+	return petCardHtml;
+}
+
+async function insertPetCardHtml(petCardIndex) {
+	let petCardHtml = await generatePetCardHtml(petCardIndex)
+	petCardsContainer.insertAdjacentHTML('afterbegin', petCardHtml);
+}
+
+// let img = data[0].img;
+// let name = data[0].name;
+// let type = data[0].type;
+// let breed = data[0].breed;
+// let description = data[0].description;
+// let age = data[0].age;
+// let inoculations = data[0].inoculations;
+// let diseases = data[0].diseases;
+// let parasites = data[0].parasites;
+
+// <img src="${img}" alt="${name} - ${type} - ${breed}">
+// <div>${name}</div>
+// <div>${type} - ${breed}</div>
+// <div>${description}</div>
+// <div>Age: ${age}</div>
+// <div>Inoculations: ${inoculations}</div>
+// <div>Diseases: ${diseases}</div>
+// <div>Parasites: ${parasites}</div>`;
 
 
 function getRandomNum(max, min) {
@@ -64,6 +87,11 @@ function getInitCardSet() {
 	return [prevCardSet, currCardSet, nextCardSet]
 }
 
+let initCardSet = getInitCardSet()
 
-getInitCardSet()
-getPets()
+let currentCardSet = initCardSet[1]
+console.log(currentCardSet)
+
+currentCardSet.forEach(el => {
+	insertPetCardHtml(el)
+})
