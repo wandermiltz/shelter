@@ -81,6 +81,7 @@ body {
 	padding-right: 40px;
 }
 
+
 .background {
 
 	&__start_dark {
@@ -113,7 +114,10 @@ body {
 	&_active {
 		display: block;
 	}
+}
 
+.stop-scroll {
+	overflow-y: hidden;
 }
 
 .header-2 {
@@ -914,11 +918,12 @@ body {
 			justify-content: flex-start;
 			min-width: fit-content;
 			max-width: 320px;
-			position: absolute;
+			position: fixed;
 			top: 0;
 			margin: 0;
 			padding-top: 210px;
 			padding-right: 55px;
+			padding-bottom: 210px;
 			min-height: 100vh;
 			transform: translateX(100%);
 			transition: 1s;
