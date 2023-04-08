@@ -1,6 +1,9 @@
 const petCardsContainer = document.getElementById('pet-cards-container');
 const pgBtnRight = document.getElementById('pg-btn-right');
 const pgBtnLeft = document.getElementById('pg-btn-left');
+const pageNumber = document.getElementById('page-number');
+const pgBtnToFirst = document.getElementById('pg-btn-left-to-first');
+const pgBtnToLast = document.getElementById('pg-btn-right-to-last');
 
 async function getPetCardsData() {
 	const petCards = './data/pet-cards.json';
@@ -70,45 +73,84 @@ async function insertPetCardHtml(pageIndex) {
 }
 
 let pageIndex = 0
+let maxPageIndex = 5
 insertPetCardHtml(pageIndex)
 
+function disableBtn(btn) {
+	btn.disabled = true;
+	btn.classList.add('pg-button_disabled')
+	btn.classList.remove('pg-button_normal')
+}
+
+function enableBtn(btn) {
+	btn.disabled = false;
+	btn.classList.remove('pg-button_disabled')
+	btn.classList.add('pg-button_normal')
+}
+
 pgBtnRight.addEventListener('click', el => {
-	if (pageIndex < 5) {
+	if (pageIndex < maxPageIndex) {
 		pageIndex += 1
 		petCardsContainer.innerHTML = ''
 		insertPetCardHtml(pageIndex)
+		pageNumber.innerHTML = `${pageIndex + 1}`
 
-		pgBtnLeft.disabled = false;
-		pgBtnLeft.classList.remove('pg-button_disabled')
-		pgBtnLeft.classList.add('pg-button_normal')
+		enableBtn(pgBtnLeft)
+		enableBtn(pgBtnToFirst)
 
-		if (pageIndex == 5) {
-			pgBtnRight.disabled = true;
-			pgBtnRight.classList.add('pg-button_disabled')
-			pgBtnRight.classList.remove('pg-button_normal')
+		if (pageIndex == maxPageIndex) {
+			disableBtn(pgBtnRight)
+			disableBtn(pgBtnToLast)
 		}
 	} else {
-		pgBtnRight.disabled = true;
-		pgBtnRight.classList.add('pg-button_disabled')
-		pgBtnRight.classList.remove('pg-button_normal')
+		disableBtn(pgBtnRight)
 	}
 })
 
 pgBtnLeft.addEventListener('click', el => {
-	if (pageIndex > 0 && pageIndex < 6) {
-		pgBtnLeft.disabled = false;
+	if (pageIndex > 0 && pageIndex <= maxPageIndex) {
 		pageIndex -= 1
 		petCardsContainer.innerHTML = ''
 		insertPetCardHtml(pageIndex)
+		pageNumber.innerHTML = `${pageIndex + 1}`
+
+		enableBtn(pgBtnLeft)
+		enableBtn(pgBtnRight)
+		enableBtn(pgBtnToFirst)
+		enableBtn(pgBtnToLast)
 
 		if (pageIndex == 0) {
-			pgBtnLeft.disabled = true;
-			pgBtnLeft.classList.add('pg-button_disabled')
-			pgBtnLeft.classList.remove('pg-button_normal')
+			disableBtn(pgBtnLeft)
+			disableBtn(pgBtnToFirst)
 		}
 	} else {
-		pgBtnLeft.classList.add('pg-button_disabled')
-		pgBtnLeft.classList.remove('pg-button_normal')
-		pgBtnLeft.disabled = true;
+		disableBtn(pgBtnLeft)
 	}
+})
+
+pgBtnToFirst.addEventListener('click', el => {
+	pageIndex = 0
+	petCardsContainer.innerHTML = ''
+	insertPetCardHtml(pageIndex)
+	pageNumber.innerHTML = `${pageIndex + 1}`
+
+	disableBtn(pgBtnLeft)
+	disableBtn(pgBtnToFirst)
+
+	enableBtn(pgBtnRight)
+	enableBtn(pgBtnToLast)
+})
+
+
+pgBtnToLast.addEventListener('click', el => {
+	pageIndex = maxPageIndex
+	petCardsContainer.innerHTML = ''
+	insertPetCardHtml(pageIndex)
+	pageNumber.innerHTML = `${pageIndex + 1}`
+
+	disableBtn(pgBtnRight)
+	disableBtn(pgBtnToLast)
+
+	enableBtn(pgBtnLeft)
+	enableBtn(pgBtnToFirst)
 })
