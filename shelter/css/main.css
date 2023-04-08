@@ -409,6 +409,7 @@ body {
   border-style: solid;
   border-width: 2px;
   border-radius: 50px;
+  background-color: transparent;
   transition: 0.5s;
 }
 .pg-button_normal {
@@ -428,7 +429,7 @@ body {
   border-color: #FDDCC4;
   background-color: #FDDCC4;
 }
-.pg-button_inactive {
+.pg-button_disabled {
   color: #CDCDCD;
   border-color: #CDCDCD;
 }

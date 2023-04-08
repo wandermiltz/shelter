@@ -540,6 +540,7 @@ body {
 	border-style: solid;
 	border-width: 2px;
 	border-radius: 50px;
+	background-color: transparent;
 	transition: 0.5s;
 
 	&_normal {
@@ -563,9 +564,10 @@ body {
 		}
 	}
 
-	&_inactive {
+	&_disabled {
 		color: $color-dark-s;
 		border-color: $color-dark-s;
+
 	}
 
 	&__arrow {

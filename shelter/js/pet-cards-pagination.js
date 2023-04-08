@@ -73,7 +73,42 @@ let pageIndex = 0
 insertPetCardHtml(pageIndex)
 
 pgBtnRight.addEventListener('click', el => {
-	pageIndex += 1
-	petCardsContainer.innerHTML = ''
-	insertPetCardHtml(pageIndex)
+	if (pageIndex < 5) {
+		pageIndex += 1
+		petCardsContainer.innerHTML = ''
+		insertPetCardHtml(pageIndex)
+
+		pgBtnLeft.disabled = false;
+		pgBtnLeft.classList.remove('pg-button_disabled')
+		pgBtnLeft.classList.add('pg-button_normal')
+
+		if (pageIndex == 5) {
+			pgBtnRight.disabled = true;
+			pgBtnRight.classList.add('pg-button_disabled')
+			pgBtnRight.classList.remove('pg-button_normal')
+		}
+	} else {
+		pgBtnRight.disabled = true;
+		pgBtnRight.classList.add('pg-button_disabled')
+		pgBtnRight.classList.remove('pg-button_normal')
+	}
+})
+
+pgBtnLeft.addEventListener('click', el => {
+	if (pageIndex > 0 && pageIndex < 6) {
+		pgBtnLeft.disabled = false;
+		pageIndex -= 1
+		petCardsContainer.innerHTML = ''
+		insertPetCardHtml(pageIndex)
+
+		if (pageIndex == 0) {
+			pgBtnLeft.disabled = true;
+			pgBtnLeft.classList.add('pg-button_disabled')
+			pgBtnLeft.classList.remove('pg-button_normal')
+		}
+	} else {
+		pgBtnLeft.classList.add('pg-button_disabled')
+		pgBtnLeft.classList.remove('pg-button_normal')
+		pgBtnLeft.disabled = true;
+	}
 })
