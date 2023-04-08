@@ -400,7 +400,7 @@ body {
   margin-right: 10px;
 }
 
-.pagination-button {
+.pg-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -411,34 +411,34 @@ body {
   border-radius: 50px;
   transition: 0.5s;
 }
-.pagination-button_normal {
+.pg-button_normal {
   border-color: #F1CDB3;
 }
-.pagination-button_normal:hover {
+.pg-button_normal:hover {
   cursor: pointer;
   border-color: #FDDCC4;
   background-color: #FDDCC4;
 }
-.pagination-button_active {
+.pg-button_active {
   border-color: #F1CDB3;
   background-color: #F1CDB3;
 }
-.pagination-button_active:hover {
+.pg-button_active:hover {
   cursor: pointer;
   border-color: #FDDCC4;
   background-color: #FDDCC4;
 }
-.pagination-button_inactive {
+.pg-button_inactive {
   color: #CDCDCD;
   border-color: #CDCDCD;
 }
-.pagination-button__arrow {
+.pg-button__arrow {
   width: 14px;
   height: 6px;
   background-image: url("../assets/icons/arrow.svg");
   background-repeat: no-repeat;
 }
-.pagination-button__arrow_left {
+.pg-button__arrow_left {
   transform: rotate(180deg);
 }
 
@@ -699,7 +699,7 @@ body {
     padding-bottom: 210px;
     min-height: 100vh;
     transform: translateX(100%);
-    transition: 1s;
+    transition: transform 1s;
     background-color: #292929;
   }
   .navigation__list_active {
@@ -813,7 +813,7 @@ body {
   .pet-cards__container_pets-page .pet-card:nth-child(6) {
     display: none;
   }
-  .pagination-button_in-slider {
+  .pg-button_in-slider {
     margin-top: 20px;
     margin-left: 10px;
     margin-right: 10px;

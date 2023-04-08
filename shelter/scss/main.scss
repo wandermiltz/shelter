@@ -530,7 +530,7 @@ body {
 	}
 }
 
-.pagination-button {
+.pg-button {
 
 	display: flex;
 	justify-content: center;
@@ -925,7 +925,7 @@ body {
 			padding-bottom: 210px;
 			min-height: 100vh;
 			transform: translateX(100%);
-			transition: 1s;
+			transition: transform 1s;
 			background-color: $color-dark-3xl;
 
 			&_active {
@@ -1083,7 +1083,7 @@ body {
 		display: none;
 	}
 
-	.pagination-button {
+	.pg-button {
 
 		&_in-slider {
 			margin-top: 20px;

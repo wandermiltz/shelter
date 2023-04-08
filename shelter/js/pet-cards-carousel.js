@@ -2,14 +2,14 @@ const petCardsContainer = document.getElementById('pet-cards-carousel');
 const rightCarouselButton = document.getElementById('right-carousel-button');
 const leftCarouselButton = document.getElementById('left-carousel-button');
 
-export async function getPetCardsData() {
+async function getPetCardsData() {
 	const petCards = './data/pet-cards.json';
 	const res = await fetch(petCards);
 	const data = await res.json();
 	return data;
 }
 
-export async function generatePetCardHtml(petCardIndex) {
+async function generatePetCardHtml(petCardIndex) {
 	const data = await getPetCardsData();
 	let name = data[petCardIndex].name;
 	let img = data[petCardIndex].img;
@@ -28,12 +28,12 @@ export async function generatePetCardHtml(petCardIndex) {
 	return petCardHtml;
 }
 
-export async function insertPetCardHtml(petCardIndex) {
+async function insertPetCardHtml(petCardIndex) {
 	let petCardHtml = await generatePetCardHtml(petCardIndex);
 	petCardsContainer.insertAdjacentHTML('afterbegin', petCardHtml)
 }
 
-export function getRandomNum(max, min) {
+function getRandomNum(max, min) {
 	return Math.floor(min + Math.random() * (max + 1 - min))
 }
 
