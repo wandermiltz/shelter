@@ -2,14 +2,14 @@ const petCardsContainer = document.getElementById('pet-cards-carousel');
 const rightCarouselButton = document.getElementById('right-carousel-button');
 const leftCarouselButton = document.getElementById('left-carousel-button');
 
-async function getPetCardsData() {
+export async function getPetCardsData() {
 	const petCards = './data/pet-cards.json';
 	const res = await fetch(petCards);
 	const data = await res.json();
 	return data;
 }
 
-async function generatePetCardHtml(petCardIndex) {
+export async function generatePetCardHtml(petCardIndex) {
 	const data = await getPetCardsData();
 	let name = data[petCardIndex].name;
 	let img = data[petCardIndex].img;
@@ -28,13 +28,12 @@ async function generatePetCardHtml(petCardIndex) {
 	return petCardHtml;
 }
 
-async function insertPetCardHtml(petCardIndex) {
+export async function insertPetCardHtml(petCardIndex) {
 	let petCardHtml = await generatePetCardHtml(petCardIndex);
-
 	petCardsContainer.insertAdjacentHTML('afterbegin', petCardHtml)
 }
 
-function getRandomNum(max, min) {
+export function getRandomNum(max, min) {
 	return Math.floor(min + Math.random() * (max + 1 - min))
 }
 
@@ -49,7 +48,6 @@ function getRandomSequenceCompared(min, max, sequenceLength, arrToCompare = []) 
 }
 
 function getInitCardSet() {
-
 	let rightCardSet = getRandomSequenceCompared(0, 7, 3);
 	let currCardSet = [...rightCardSet];
 	rightCardSet = getRandomSequenceCompared(0, 7, 3, currCardSet);
@@ -65,8 +63,8 @@ function getInitCardSet() {
 
 function animateMoveCardRight() {
 	document.getElementById('pet-cards-carousel').animate([
-		{ transform: 'translate3D(0, 0, 0)' },
-		{ transform: 'translate3D(-1000px, 0, 0)' }
+		{ transform: 'translateX(0)' },
+		{ transform: 'translateX(-1000px)' }
 	], {
 		duration: 700
 	})
@@ -74,8 +72,8 @@ function animateMoveCardRight() {
 
 function animateMoveCardLeft() {
 	document.getElementById('pet-cards-carousel').animate([
-		{ transform: 'translate3D(0, 0, 0)' },
-		{ transform: 'translate3D(1000px, 0, 0)' }
+		{ transform: 'translateX(0)' },
+		{ transform: 'translateX(1000px)' }
 	], {
 		duration: 700
 	})

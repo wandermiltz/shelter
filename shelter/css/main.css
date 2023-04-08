@@ -332,8 +332,8 @@ body {
   justify-content: space-between;
 }
 .our-friends__button {
-  padding-top: 30px;
   padding-bottom: 24px;
+  justify-self: flex-end;
 }
 
 .pet-cards {
@@ -345,6 +345,7 @@ body {
   justify-content: space-between;
   align-content: space-between;
   padding-top: 60px;
+  min-height: 555px;
 }
 
 @keyframes pet-card {
@@ -409,9 +410,6 @@ body {
   border-width: 2px;
   border-radius: 50px;
   transition: 0.5s;
-}
-.pagination-button_in-slider {
-  margin-top: 30px;
 }
 .pagination-button_normal {
   border-color: #F1CDB3;
@@ -786,8 +784,9 @@ body {
     order: -1;
   }
   .our-friends__slider {
+    width: 90%;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
   .our-friends__button {
     padding-top: 40px;
@@ -797,6 +796,7 @@ body {
     margin: 0;
   }
   .pet-cards__container {
+    min-height: 495px;
     justify-content: center;
     padding-top: 42px;
   }
@@ -911,13 +911,6 @@ body {
   }
   .in-addition__text {
     max-width: 95%;
-  }
-  .paginator {
-    padding-top: 45px;
-  }
-  .paginator__item {
-    margin-left: 5px;
-    margin-right: 5px;
   }
   .footer__contact-link_location {
     align-self: flex-start;
