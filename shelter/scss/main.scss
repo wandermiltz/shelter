@@ -455,6 +455,8 @@ body {
 
 .pet-cards {
 
+	overflow: hidden;
+
 	&__container {
 		display: flex;
 		flex-wrap: wrap;
@@ -481,7 +483,7 @@ body {
 .pet-card {
 
 	animation-name: pet-card;
-	animation-duration: 0.7s;
+	animation-duration: 1s;
 	animation-timing-function: linear;
 
 	&__container {

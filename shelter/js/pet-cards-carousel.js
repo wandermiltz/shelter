@@ -1,4 +1,4 @@
-const petCardsContainer = document.getElementById('pet-cards-container');
+const petCardsContainer = document.getElementById('pet-cards-carousel');
 const rightCarouselButton = document.getElementById('right-carousel-button');
 const leftCarouselButton = document.getElementById('left-carousel-button');
 
@@ -30,7 +30,8 @@ async function generatePetCardHtml(petCardIndex) {
 
 async function insertPetCardHtml(petCardIndex) {
 	let petCardHtml = await generatePetCardHtml(petCardIndex);
-	petCardsContainer.insertAdjacentHTML('afterbegin', petCardHtml);
+
+	petCardsContainer.insertAdjacentHTML('afterbegin', petCardHtml)
 }
 
 function getRandomNum(max, min) {
@@ -48,26 +49,41 @@ function getRandomSequenceCompared(min, max, sequenceLength, arrToCompare = []) 
 }
 
 function getInitCardSet() {
-	//1
+
 	let rightCardSet = getRandomSequenceCompared(0, 7, 3);
-	//2
 	let currCardSet = [...rightCardSet];
-	//3
 	rightCardSet = getRandomSequenceCompared(0, 7, 3, currCardSet);
-	//4
 	let leftCardSet = [...currCardSet];
 	console.log('left', leftCardSet)
-	//5
 	currCardSet = [...rightCardSet];
 	console.log('curr', currCardSet)
-	//6
 	rightCardSet = getRandomSequenceCompared(0, 7, 3, currCardSet);
 	console.log('right', rightCardSet)
 
 	return [leftCardSet, currCardSet, rightCardSet]
 }
 
+function animateMoveCardRight() {
+	document.getElementById('pet-cards-carousel').animate([
+		{ transform: 'translate3D(0, 0, 0)' },
+		{ transform: 'translate3D(-1000px, 0, 0)' }
+	], {
+		duration: 700
+	})
+}
+
+function animateMoveCardLeft() {
+	document.getElementById('pet-cards-carousel').animate([
+		{ transform: 'translate3D(0, 0, 0)' },
+		{ transform: 'translate3D(1000px, 0, 0)' }
+	], {
+		duration: 700
+	})
+}
+
 function moveCardsByRightButton(leftCardSet, currCardSet, rightCardSet) {
+
+	animateMoveCardRight()
 
 	// left <- curr
 	leftCardSet = [...currCardSet];
@@ -84,6 +100,8 @@ function moveCardsByRightButton(leftCardSet, currCardSet, rightCardSet) {
 
 function moveCardsByLeftButton(leftCardSet, currCardSet, rightCardSet) {
 
+	animateMoveCardLeft()
+
 	// curr -> right
 	rightCardSet = [...currCardSet];
 	console.log('left', leftCardSet)
@@ -99,7 +117,6 @@ function moveCardsByLeftButton(leftCardSet, currCardSet, rightCardSet) {
 
 let fullCardSetOuter = getInitCardSet()
 let currCardSetOuter = fullCardSetOuter[1]
-
 console.log('currOuter', currCardSetOuter)
 
 currCardSetOuter.forEach(el => {
@@ -111,10 +128,10 @@ rightCarouselButton.addEventListener('click', el => {
 	console.log('movedRight', cardSetMovedByRightButton)
 	petCardsContainer.innerHTML = ''
 	let currCardSetMoved = cardSetMovedByRightButton[1]
+	console.log('currCardSetMovedRight', cardSetMovedByRightButton[1])
 	currCardSetMoved.forEach(el => {
 		insertPetCardHtml(el)
 	})
-
 	fullCardSetOuter = cardSetMovedByRightButton
 })
 
@@ -122,10 +139,10 @@ leftCarouselButton.addEventListener('click', el => {
 	let cardSetMovedByLeftButton = moveCardsByLeftButton(...fullCardSetOuter)
 	console.log('movedLeft', cardSetMovedByLeftButton)
 	let currCardSetMoved = cardSetMovedByLeftButton[1]
+	console.log('currCardSetMovedLeft', cardSetMovedByLeftButton[1])
 	petCardsContainer.innerHTML = ''
 	currCardSetMoved.forEach(el => {
 		insertPetCardHtml(el)
 	})
-
 	fullCardSetOuter = cardSetMovedByLeftButton
 })

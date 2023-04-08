@@ -336,6 +336,9 @@ body {
   padding-bottom: 24px;
 }
 
+.pet-cards {
+  overflow: hidden;
+}
 .pet-cards__container {
   display: flex;
   flex-wrap: wrap;
@@ -357,7 +360,7 @@ body {
 }
 .pet-card {
   animation-name: pet-card;
-  animation-duration: 0.7s;
+  animation-duration: 1s;
   animation-timing-function: linear;
 }
 .pet-card__container {
