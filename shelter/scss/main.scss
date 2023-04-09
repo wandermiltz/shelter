@@ -731,26 +731,31 @@ body {
 	}
 }
 
-.modal {
+.pet-modal {
 
-	display: flex;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 900px;
-	height: 500px;
-	background-color: $color-light-s;
-	gap: 30px;
-	border-radius: 5px;
+	&__container {
+		display: none;
+
+		&.open {
+			display: flex;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 900px;
+			height: 500px;
+			background-color: $color-light-s;
+			gap: 30px;
+			border-radius: 5px;
+		}
+	}
 
 	&__image {
 		width: 500px;
 		height: 500px;
-		border-radius: 5px 0px 0px 5px;
+		border-radius: 5px;
 	}
 
 	&__content {
-		display: none;
 		width: 351px;
 	}
 

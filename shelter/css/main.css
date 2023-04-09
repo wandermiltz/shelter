@@ -561,7 +561,10 @@ body {
   height: 310px;
 }
 
-.modal {
+.pet-modal__container {
+  display: none;
+}
+.pet-modal__container.open {
   display: flex;
   position: absolute;
   bottom: 0;
@@ -572,36 +575,35 @@ body {
   gap: 30px;
   border-radius: 5px;
 }
-.modal__image {
+.pet-modal__image {
   width: 500px;
   height: 500px;
-  border-radius: 5px 0px 0px 5px;
+  border-radius: 5px;
 }
-.modal__content {
-  display: none;
+.pet-modal__content {
   width: 351px;
 }
-.modal__title {
+.pet-modal__title {
   padding-top: 50px;
 }
-.modal__subtitle {
+.pet-modal__subtitle {
   padding-top: 10px;
   padding-bottom: 40px;
 }
-.modal__paragraph {
+.pet-modal__paragraph {
   color: black;
   padding-bottom: 40px;
 }
-.modal__list {
+.pet-modal__list {
   margin: 0;
   padding: 0;
   padding-left: 15px;
 }
-.modal__list-item {
+.pet-modal__list-item {
   color: #F1CDB3;
   padding-bottom: 10px;
 }
-.modal__list-item span {
+.pet-modal__list-item span {
   color: black;
 }
 

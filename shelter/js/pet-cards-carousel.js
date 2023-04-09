@@ -1,4 +1,5 @@
 const petCardsContainer = document.getElementById('pet-cards-carousel');
+const petModalContainer = document.getElementById('pet-modal-container');
 const rightCarouselButton = document.getElementById('right-carousel-button');
 const leftCarouselButton = document.getElementById('left-carousel-button');
 
@@ -9,12 +10,14 @@ async function getPetCardsData() {
 	return data;
 }
 
-async function generatePetCardHtml(petCardIndex) {
-	const data = await getPetCardsData();
-	let name = data[petCardIndex].name;
-	let img = data[petCardIndex].img;
-	let type = data[petCardIndex].type;
-	let petCardHtml = `<div class="pet-card">
+let petCardsData = await getPetCardsData();
+
+function generatePetCardHtml(cardObj) {
+
+	let name = cardObj.name;
+	let img = cardObj.img;
+	let type = cardObj.type;
+	let petCardHtml = `<div class="pet-card" id="${name}">
 			<div class="pet-card__container">
 				<div class="pet-card__img">
 					<img src="${img}" alt="${name} - ${type}">
@@ -28,9 +31,54 @@ async function generatePetCardHtml(petCardIndex) {
 	return petCardHtml;
 }
 
+function generatePetCardModalHtml(cardObj) {
+	let name = cardObj.name;
+	let img = cardObj.img;
+	let type = cardObj.type;
+	let breed = cardObj.breed;
+	let age = cardObj.age
+	let inoculations = cardObj.inoculations
+	let diseases = cardObj.diseases
+	let parasites = cardObj.parasites
+
+	let petCardModalHtml = `<img class="pet-modal__image" src="${img}" alt="${name} - ${type}">
+			<div class="pet-modal__content">
+				<h3 class="pet-modal__title header-3">${name}</h3>
+				<div class="pet-modal__subtitle header-4 ">
+					<span>${type}</span> - <span>${breed}</span>
+				</div>
+				<div class="pet-modal__paragraph header-5">
+				</div>
+				<ul class="pet-modal__list header-5">
+					<li class="pet-modal__list-item">
+						<span><b>Age: </b><span>${age}</span></span>
+					</li>
+					<li class="pet-modal__list-item">
+						<span><b>Inoculations: </b><span>${inoculations}</span></span>
+					</li>
+					<li class="pet-modal__list-item">
+						<span><b>Diseases: </b><span>${diseases}</span></span>
+					</li>
+					<li class="pet-modal__list-item">
+						<span><b>Parasites: </b><span>${parasites}</span></span>
+					</li>
+				</ul>
+			</div>`
+	return petCardModalHtml;
+}
+
 async function insertPetCardHtml(petCardIndex) {
-	let petCardHtml = await generatePetCardHtml(petCardIndex);
+	let cardObj = petCardsData[petCardIndex]
+	let petCardHtml = generatePetCardHtml(cardObj);
 	petCardsContainer.insertAdjacentHTML('afterbegin', petCardHtml);
+
+	let currentCard = document.getElementById(cardObj.name)
+	currentCard.addEventListener('click', (e) => {
+		petModalContainer.classList.add('open')
+		console.log('modal opens')
+		let petModalHtml = generatePetCardModalHtml(cardObj)
+		petModalContainer.innerHTML = petModalHtml
+	})
 }
 
 function getRandomNum(max, min) {
@@ -117,11 +165,11 @@ let fullCardSetOuter = getInitCardSet();
 let currCardSetOuter = fullCardSetOuter[1];
 console.log('currOuter', currCardSetOuter);
 
-currCardSetOuter.forEach(el => {
-	insertPetCardHtml(el);
+currCardSetOuter.forEach(cardIndex => {
+	insertPetCardHtml(cardIndex);
 })
 
-rightCarouselButton.addEventListener('click', el => {
+rightCarouselButton.addEventListener('click', (event) => {
 	let cardSetMovedByRightButton = moveCardsByRightButton(...fullCardSetOuter);
 	console.log('movedRight', cardSetMovedByRightButton);
 	petCardsContainer.innerHTML = '';
@@ -133,7 +181,7 @@ rightCarouselButton.addEventListener('click', el => {
 	fullCardSetOuter = cardSetMovedByRightButton;
 })
 
-leftCarouselButton.addEventListener('click', el => {
+leftCarouselButton.addEventListener('click', (event) => {
 	let cardSetMovedByLeftButton = moveCardsByLeftButton(...fullCardSetOuter);
 	console.log('movedLeft', cardSetMovedByLeftButton);
 	let currCardSetMoved = cardSetMovedByLeftButton[1];

@@ -17,13 +17,13 @@ function removeMenu() {
 	body.classList.remove('stop-scroll');
 }
 
-document.addEventListener('click', el => {
-	const withinBoundaries = el.composedPath().includes(burger);
+document.addEventListener('click', (event) => {
+	const withinBoundaries = event.composedPath().includes(burger);
 	if (!withinBoundaries) {
 		removeMenu()
 	};
 });
 
-burger.addEventListener('click', () => {
+burger.addEventListener('click', (event) => {
 	toggleMenu()
 });

@@ -1,4 +1,5 @@
 const petCardsContainer = document.getElementById('pet-cards-container');
+const petModalContainer = document.getElementById('pet-modal-container');
 const pgBtnRight = document.getElementById('pg-btn-right');
 const pgBtnLeft = document.getElementById('pg-btn-left');
 const pageNumber = document.getElementById('page-number');
@@ -16,7 +17,7 @@ function generatePetCardHtml(obj) {
 	let name = obj.name;
 	let img = obj.img;
 	let type = obj.type;
-	let petCardHtml = `<div class="pet-card">
+	let petCardHtml = `<div class="pet-card" id="${name}">
 			<div class="pet-card__container">
 				<div class="pet-card__img">
 					<img src="${img}" alt="${name} - ${type}">
@@ -28,6 +29,45 @@ function generatePetCardHtml(obj) {
 			</div>
 		</div>`
 	return petCardHtml;
+}
+
+function generatePetCardModalHtml(cardObj) {
+
+	let name = cardObj.name;
+	let img = cardObj.img;
+	let type = cardObj.type;
+	let breed = cardObj.breed;
+	let age = cardObj.age
+	let description = cardObj.description
+	let inoculations = cardObj.inoculations
+	let diseases = cardObj.diseases
+	let parasites = cardObj.parasites
+
+	let petCardModalHtml = `<img class="pet-modal__image" src="${img}" alt="${name} - ${type}">
+			<div class="pet-modal__content">
+				<h3 class="pet-modal__title header-3">${name}</h3>
+				<div class="pet-modal__subtitle header-4 ">
+					<span>${type}</span> - <span>${breed}</span>
+				</div>
+				<div class="pet-modal__paragraph header-5">
+				${description}
+				</div>
+				<ul class="pet-modal__list header-5">
+					<li class="pet-modal__list-item">
+						<span><b>Age: </b><span>${age}</span></span>
+					</li>
+					<li class="pet-modal__list-item">
+						<span><b>Inoculations: </b><span>${inoculations}</span></span>
+					</li>
+					<li class="pet-modal__list-item">
+						<span><b>Diseases: </b><span>${diseases}</span></span>
+					</li>
+					<li class="pet-modal__list-item">
+						<span><b>Parasites: </b><span>${parasites}</span></span>
+					</li>
+				</ul>
+			</div>`
+	return petCardModalHtml;
 }
 
 function shuffle(arr) {
@@ -58,7 +98,17 @@ function getChunks(array, chunkSize) {
 
 function insertPetCardHtml(pageIndex) {
 	petCardsContainer.innerHTML = chunkedPetCardsSet[pageIndex].map(pet => generatePetCardHtml(pet)).join('');
+	chunkedPetCardsSet[pageIndex].forEach(cardObj => {
+		let currentCard = document.getElementById(cardObj.name)
+		currentCard.addEventListener('click', (e) => {
+			petModalContainer.classList.add('open')
+			console.log('modal opens')
+			let petModalHtml = generatePetCardModalHtml(cardObj)
+			petModalContainer.innerHTML = petModalHtml
+		})
+	})
 }
+
 
 let pageIndex = 0;
 let maxPageIndex = 0;
@@ -139,7 +189,7 @@ function enableBtn(btn) {
 	btn.classList.add('pg-button_normal');
 }
 
-pgBtnRight.addEventListener('click', el => {
+pgBtnRight.addEventListener('click', (event) => {
 	if (pageIndex < maxPageIndex) {
 		pageIndex += 1;
 		petCardsContainer.innerHTML = '';
@@ -158,7 +208,7 @@ pgBtnRight.addEventListener('click', el => {
 	}
 })
 
-pgBtnLeft.addEventListener('click', el => {
+pgBtnLeft.addEventListener('click', (event) => {
 	if (pageIndex > 0 && pageIndex <= maxPageIndex) {
 		pageIndex -= 1
 		petCardsContainer.innerHTML = '';
@@ -179,7 +229,7 @@ pgBtnLeft.addEventListener('click', el => {
 	}
 })
 
-pgBtnToFirst.addEventListener('click', el => {
+pgBtnToFirst.addEventListener('click', (event) => {
 	pageIndex = 0
 	petCardsContainer.innerHTML = '';
 	insertPetCardHtml(pageIndex);
@@ -193,7 +243,7 @@ pgBtnToFirst.addEventListener('click', el => {
 })
 
 
-pgBtnToLast.addEventListener('click', el => {
+pgBtnToLast.addEventListener('click', (event) => {
 	pageIndex = maxPageIndex;
 	petCardsContainer.innerHTML = '';
 	insertPetCardHtml(pageIndex);
