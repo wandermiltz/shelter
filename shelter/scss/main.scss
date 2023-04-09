@@ -1237,12 +1237,12 @@ body {
 
 	.paginator {
 
-		// padding-top: 45px;
+		padding-top: 45px;
 
-		// &__item {
-		// margin-left: 5px;
-		// margin-right: 5px;
-		// }
+		&__item {
+			margin-left: 5px;
+			margin-right: 5px;
+		}
 	}
 
 	.footer {

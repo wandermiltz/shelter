@@ -913,6 +913,13 @@ body {
   .in-addition__text {
     max-width: 95%;
   }
+  .paginator {
+    padding-top: 45px;
+  }
+  .paginator__item {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
   .footer__contact-link_location {
     align-self: flex-start;
     padding-top: 40px;
