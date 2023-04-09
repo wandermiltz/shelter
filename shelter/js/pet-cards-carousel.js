@@ -32,11 +32,13 @@ function generatePetCardHtml(cardObj) {
 }
 
 function generatePetCardModalHtml(cardObj) {
+
 	let name = cardObj.name;
 	let img = cardObj.img;
 	let type = cardObj.type;
 	let breed = cardObj.breed;
 	let age = cardObj.age
+	let description = cardObj.description
 	let inoculations = cardObj.inoculations
 	let diseases = cardObj.diseases
 	let parasites = cardObj.parasites
@@ -48,6 +50,7 @@ function generatePetCardModalHtml(cardObj) {
 					<span>${type}</span> - <span>${breed}</span>
 				</div>
 				<div class="pet-modal__paragraph header-5">
+				${description}
 				</div>
 				<ul class="pet-modal__list header-5">
 					<li class="pet-modal__list-item">

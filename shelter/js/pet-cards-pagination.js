@@ -1,5 +1,6 @@
 const petCardsContainer = document.getElementById('pet-cards-container');
 const petModalContainer = document.getElementById('pet-modal-container');
+const overlay = document.querySelector('.overlay');
 const pgBtnRight = document.getElementById('pg-btn-right');
 const pgBtnLeft = document.getElementById('pg-btn-left');
 const pageNumber = document.getElementById('page-number');
@@ -98,10 +99,12 @@ function getChunks(array, chunkSize) {
 
 function insertPetCardHtml(pageIndex) {
 	petCardsContainer.innerHTML = chunkedPetCardsSet[pageIndex].map(pet => generatePetCardHtml(pet)).join('');
+
 	chunkedPetCardsSet[pageIndex].forEach(cardObj => {
 		let currentCard = document.getElementById(cardObj.name)
 		currentCard.addEventListener('click', (e) => {
 			petModalContainer.classList.add('open')
+			overlay.classList.add('open')
 			console.log('modal opens')
 			let petModalHtml = generatePetCardModalHtml(cardObj)
 			petModalContainer.innerHTML = petModalHtml
