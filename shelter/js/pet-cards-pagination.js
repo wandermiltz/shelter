@@ -100,6 +100,23 @@ if (window.innerWidth < 768) {
 	insertPetCardHtml(pageIndex);
 }
 
+function changeOnMedia() {
+	if (window.innerWidth < 768) {
+		maxPageIndex = 15;
+		cardsPerPageCount = 3;
+
+	} else if (window.innerWidth <= 1200) {
+		maxPageIndex = 7;
+		cardsPerPageCount = 6;
+
+	} else {
+		maxPageIndex = 5;
+		cardsPerPageCount = 8;
+	}
+}
+
+window.addEventListener('resize', changeOnMedia);
+
 function disableBtn(btn) {
 	btn.disabled = true;
 	btn.classList.add('pg-button_disabled');
