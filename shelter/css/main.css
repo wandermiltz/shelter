@@ -561,6 +561,50 @@ body {
   height: 310px;
 }
 
+.modal {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 900px;
+  height: 500px;
+  background-color: #FAFAFA;
+  gap: 30px;
+  border-radius: 5px;
+}
+.modal__image {
+  width: 500px;
+  height: 500px;
+  border-radius: 5px 0px 0px 5px;
+}
+.modal__content {
+  display: none;
+  width: 351px;
+}
+.modal__title {
+  padding-top: 50px;
+}
+.modal__subtitle {
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+.modal__paragraph {
+  color: black;
+  padding-bottom: 40px;
+}
+.modal__list {
+  margin: 0;
+  padding: 0;
+  padding-left: 15px;
+}
+.modal__list-item {
+  color: #F1CDB3;
+  padding-bottom: 10px;
+}
+.modal__list-item span {
+  color: black;
+}
+
 /* Tablet */
 @media only screen and (max-width: 1200px) {
   .wrapper {

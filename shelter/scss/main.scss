@@ -731,6 +731,59 @@ body {
 	}
 }
 
+.modal {
+
+	display: flex;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 900px;
+	height: 500px;
+	background-color: $color-light-s;
+	gap: 30px;
+	border-radius: 5px;
+
+	&__image {
+		width: 500px;
+		height: 500px;
+		border-radius: 5px 0px 0px 5px;
+	}
+
+	&__content {
+		display: none;
+		width: 351px;
+	}
+
+	&__title {
+		padding-top: 50px;
+	}
+
+	&__subtitle {
+		padding-top: 10px;
+		padding-bottom: 40px;
+	}
+
+	&__paragraph {
+		color: black;
+		padding-bottom: 40px;
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		padding-left: 15px;
+	}
+
+	&__list-item {
+		color: $color-primary;
+		padding-bottom: 10px;
+
+		span {
+			color: black;
+		}
+	}
+}
+
 /* Tablet */
 @media only screen and (max-width: 1200px) {
 
