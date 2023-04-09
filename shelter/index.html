@@ -12,6 +12,7 @@
 </head>
 
 <body>
+	<div class="darken"></div>
 	<div class="background__start_dark">
 		<header class="header">
 			<div class="header__container header__container_main wrapper">
@@ -25,8 +26,10 @@
 						</div>
 					</a>
 				</div>
-				<div class="burger"></div>
 				<nav class="navigation">
+					<div class="navigation__burger">
+						<span></span>
+					</div>
 					<ul class="navigation__list">
 						<li class="navigation__item">
 							<a href="./index.html" class="navigation__link navigation__link_light navigation__link_active">About the
@@ -97,56 +100,23 @@
 				</h3>
 
 				<div class="our-friends__slider">
-					<div class="pagination-button pagination-button_desc pagination-button_in-slider pagination-button_normal">
-						<div class="pagination-button__arrow"></div>
+					<div class="pg-button pg-button_desc
+					pg-button_normal" id="left-carousel-button">
+						<div class="pg-button__arrow"></div>
 					</div>
 					<div class="our-friends__cards">
 						<div class="pet-cards">
-							<div class="pet-cards__container pet-cards__container_main-page">
-
-								<div class="pet-card">
-									<div class="pet-card__container">
-										<div class="pet-card__img">
-											<img src="./assets/photos/pets-cards/pets-katrine.png" alt="pets-katrine">
-										</div>
-										<div class="pet-card__title header-4 header-4_dark">Katrine</div>
-										<div class="pet-card__button">
-											<button class="button button_bordered">Learn more</button>
-										</div>
-									</div>
-								</div>
-
-								<div class="pet-card">
-									<div class="pet-card__container">
-										<div class="pet-card__img">
-											<img src="./assets/photos/pets-cards/pets-jennifer.png" alt="pets-jennifer">
-										</div>
-										<div class="pet-card__title header-4 header-4_dark">Jennifer</div>
-										<div class="pet-card__button">
-											<button class="button button_bordered">Learn more</button>
-										</div>
-									</div>
-								</div>
-
-								<div class="pet-card">
-									<div class="pet-card__container">
-										<div class="pet-card__img">
-											<img src="./assets/photos/pets-cards/pets-woody.png" alt="pets-woody">
-										</div>
-										<div class="pet-card__title header-4 header-4_dark">Woody</div>
-										<div class="pet-card__button">
-											<button class="button button_bordered">Learn more</button>
-										</div>
-									</div>
-								</div>
-
+							<div class="pet-cards__container pet-cards__container_main-page" id="pet-cards-carousel">
 							</div>
 						</div>
 					</div>
-					<div class="pagination-button pagination-button_desc pagination-button_in-slider pagination-button_normal">
-						<div class="pagination-button__arrow pagination-button__arrow_left"></div>
+					<div class="pg-button pg-button_desc
+					pg-button_normal" id="right-carousel-button">
+						<div class="pg-button__arrow pg-button__arrow_left"></div>
 					</div>
 				</div>
+
+				<div class="pet-modal pet-modal__container" id="pet-modal-container"></div>
 
 				<div class="our-friends__button">
 					<form action="./pets.html">
@@ -318,7 +288,10 @@
 			<img class="footer__img" src="./assets/photos/pets-pages/footer-puppy.png" alt="footer-puppy">
 		</footer>
 	</div>
-	<script src="js/index.js"></script>
+	<script type="module" src="js/index.js"></script>
+	<script type="module" src="js/navigation-burger.js"></script>
+	<script type="module" src="js/pet-cards-carousel.js"></script>
+	<script type="module" src="js/pet-cards-modal.js"></script>
 </body>
 
 </html>
