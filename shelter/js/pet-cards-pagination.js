@@ -12,7 +12,7 @@ async function getPetCardsData() {
 	return data;
 }
 
-async function generatePetCardHtml(obj) {
+function generatePetCardHtml(obj) {
 	let name = obj.name;
 	let img = obj.img;
 	let type = obj.type;
@@ -30,88 +30,98 @@ async function generatePetCardHtml(obj) {
 	return petCardHtml;
 }
 
-function getRandomNum(max, min) {
-	return Math.floor(min + Math.random() * (max + 1 - min));
+function shuffle(arr) {
+	return arr.sort(() => Math.random() - 0.5);
 }
 
-function getRandomSequence(min, max, sequenceLength) {
-	let numArr = [];
-	while (numArr.length !== sequenceLength) {
-		let num = getRandomNum(max, min);
-		if (numArr.indexOf(num) !== - 1) continue;
-		numArr.push(num);
+async function generateFullPetCardsSet() {
+	let data = await getPetCardsData();
+	let arr = [];
+	for (let i = 1; i <= 6; i++) {
+		arr.push(data);
+	};
+	arr = arr.flat();
+	let result = [];
+	for (let i = 0; i < arr.length; i = i + 4) {
+		result.push(shuffle(arr.slice(i, i + 4)));
 	}
-	return numArr;
+	return result.flat();
 }
 
-async function generateFullPetCardsSet(maxPageIndex, cardsPerPageCount) {
-
-	const data = await getPetCardsData();
-	let arrOfCardSequences = []
-
-	for (let i = 0; i <= maxPageIndex; i++) {
-		let randomSequence = getRandomSequence(0, 7, cardsPerPageCount);
-		let arrOfRandomCards = [];
-		for (let i = 0; i < cardsPerPageCount; i++) {
-			arrOfRandomCards.push(data[randomSequence[i]]);
-		}
-		arrOfCardSequences.push(arrOfRandomCards);
+function getChunks(array, chunkSize) {
+	let result = [];
+	for (let i = 0; i < array.length; i += chunkSize) {
+		result.push(array.slice(i, i + chunkSize));
 	}
-	return arrOfCardSequences;
+	return result;
 }
 
-async function insertPetCardHtml(pageIndex) {
-	for (let j = 0; j < fullPetCardsSet[pageIndex].length; j++) {
-		let petCardHtml = await generatePetCardHtml(fullPetCardsSet[pageIndex][j]);
-		petCardsContainer.insertAdjacentHTML('afterbegin', petCardHtml);
-	}
+function insertPetCardHtml(pageIndex) {
+	petCardsContainer.innerHTML = chunkedPetCardsSet[pageIndex].map(pet => generatePetCardHtml(pet)).join('');
 }
 
 let pageIndex = 0;
 let maxPageIndex = 0;
 let cardsPerPageCount = 0;
-let fullPetCardsSet = [];
+let chunkedPetCardsSet = [];
+let fullPetCardsSet = await generateFullPetCardsSet();
+console.log('Full CardsSet', fullPetCardsSet)
 
 if (window.innerWidth < 768) {
-	console.log('check on 320px');
+	console.log('Check for 320px');
 	maxPageIndex = 15;
 	cardsPerPageCount = 3;
 
-	fullPetCardsSet = await generateFullPetCardsSet(maxPageIndex, cardsPerPageCount);
-	console.log('fullPetCardsSet', fullPetCardsSet);
-	insertPetCardHtml(pageIndex);
-
 } else if (window.innerWidth <= 1200) {
-	console.log('check on 768px');
+	console.log('Check for 768px');
 	maxPageIndex = 7;
 	cardsPerPageCount = 6;
 
-	fullPetCardsSet = await generateFullPetCardsSet(maxPageIndex, cardsPerPageCount);
-	console.log('fullPetCardsSet', fullPetCardsSet);
-	insertPetCardHtml(pageIndex);
-
 } else {
-	console.log('check on 1280px');
+	console.log('Check for 1280px');
 	maxPageIndex = 5;
 	cardsPerPageCount = 8;
-
-	fullPetCardsSet = await generateFullPetCardsSet(maxPageIndex, cardsPerPageCount);
-	console.log('fullPetCardsSet', fullPetCardsSet);
-	insertPetCardHtml(pageIndex);
 }
 
-function changeOnMedia() {
+chunkedPetCardsSet = getChunks(fullPetCardsSet, cardsPerPageCount);
+insertPetCardHtml(pageIndex);
+
+console.log('Chunked CardsSet', chunkedPetCardsSet);
+console.log('Page Count', chunkedPetCardsSet.length);
+console.log('Pets per Page Count', cardsPerPageCount);
+console.log('Pets on Current Page', chunkedPetCardsSet[pageIndex]);
+
+async function changeOnMedia() {
+
+	let prevCardsPerPageCount = cardsPerPageCount
+
 	if (window.innerWidth < 768) {
 		maxPageIndex = 15;
 		cardsPerPageCount = 3;
+		pageIndex = maxPageIndex;
+		pageNumber.innerHTML = `${pageIndex + 1}`;
 
 	} else if (window.innerWidth <= 1200) {
 		maxPageIndex = 7;
 		cardsPerPageCount = 6;
+		pageIndex = maxPageIndex;
+		pageNumber.innerHTML = `${pageIndex + 1}`;
 
 	} else {
 		maxPageIndex = 5;
 		cardsPerPageCount = 8;
+		pageIndex = maxPageIndex;
+		pageNumber.innerHTML = `${pageIndex + 1}`;
+	}
+
+	if (prevCardsPerPageCount !== cardsPerPageCount) {
+		chunkedPetCardsSet = getChunks(fullPetCardsSet, cardsPerPageCount);
+		insertPetCardHtml(pageIndex);
+
+		console.log('Chunked CardsSet', chunkedPetCardsSet);
+		console.log('Page Count', chunkedPetCardsSet.length);
+		console.log('Pets per Page Count', cardsPerPageCount);
+		console.log('Pets on Current Page', chunkedPetCardsSet[pageIndex]);
 	}
 }
 
