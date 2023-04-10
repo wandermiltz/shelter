@@ -820,6 +820,47 @@ body {
 	}
 }
 
+.modal-close-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 52px;
+	height: 52px;
+	border: 2px solid $color-primary;
+	border-radius: 100px;
+	margin-right: 10px;
+	z-index: 9999;
+	transition: 0.5s;
+
+	&:hover {
+		cursor: pointer;
+		border-color: $color-primary-light;
+		background-color: $color-primary-light;
+	}
+
+	&::after,
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 22px;
+		left: 17px;
+		width: 14px;
+		height: 2px;
+		background: #292929;
+		z-index: 9999;
+		border-radius: 1px;
+	}
+
+	&::before {
+		transform: rotate(45deg);
+	}
+
+	&::after {
+		transform: rotate(-45deg);
+	}
+}
+
 /* Tablet */
 @media only screen and (max-width: 1200px) {
 
