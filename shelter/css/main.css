@@ -600,7 +600,6 @@ body {
   width: 900px;
   height: 500px;
   background-color: #fff;
-  gap: 30px;
   border-radius: 15px;
 }
 .pet-modal__image {
@@ -610,6 +609,8 @@ body {
 }
 .pet-modal__content {
   width: 351px;
+  padding-left: 30px;
+  padding-right: 20px;
 }
 .pet-modal__title {
   padding-top: 50px;
@@ -724,6 +725,37 @@ body {
     justify-content: space-evenly;
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .pet-modal.open {
+    width: 682px;
+    height: 402px;
+  }
+  .pet-modal__container.open {
+    width: 630px;
+    height: 350px;
+  }
+  .pet-modal__image {
+    width: 350px;
+    height: 350px;
+  }
+  .pet-modal__content {
+    width: 280px;
+    padding: 9px;
+  }
+  .pet-modal__title {
+    padding: 0;
+  }
+  .pet-modal__subtitle {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  .pet-modal__paragraph {
+    font-size: 13px;
+    padding-bottom: 17px;
+    line-height: 14.3px;
+  }
+  .pet-modal__list-item {
+    padding-bottom: 6px;
   }
   .paginator {
     padding-bottom: 0px;
@@ -924,10 +956,51 @@ body {
   .pet-cards__container_pets-page .pet-card:nth-child(6) {
     display: none;
   }
+  .pet-modal.open {
+    width: 270px;
+    height: 393px;
+  }
+  .pet-modal__container.open {
+    width: 240px;
+    height: 341px;
+  }
+  .pet-modal__image {
+    display: none;
+  }
+  .pet-modal__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .pet-modal__title {
+    font-size: 35px;
+    line-height: 45px;
+    text-align: center;
+    padding: 0;
+  }
+  .pet-modal__subtitle {
+    text-align: center;
+    padding: 0;
+    justify-self: flex-start;
+  }
+  .pet-modal__paragraph {
+    text-align: justify;
+    padding: 0;
+  }
+  .modal-close-btn {
+    margin-right: 0px;
+  }
   .pg-button_in-slider {
     margin-top: 20px;
     margin-left: 10px;
     margin-right: 10px;
+  }
+  .paginator {
+    padding-top: 45px;
+  }
+  .paginator__item {
+    margin-left: 5px;
+    margin-right: 5px;
   }
   .help__container {
     padding-top: 42px;
@@ -1022,13 +1095,6 @@ body {
   }
   .in-addition__text {
     max-width: 95%;
-  }
-  .paginator {
-    padding-top: 45px;
-  }
-  .paginator__item {
-    margin-left: 5px;
-    margin-right: 5px;
   }
   .footer__contact-link_location {
     align-self: flex-start;
