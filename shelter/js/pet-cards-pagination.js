@@ -184,23 +184,25 @@ async function changeOnMedia() {
 	if (window.innerWidth < 768) {
 		maxPageIndex = 15;
 		cardsPerPageCount = 3;
-		pageIndex = maxPageIndex;
-		pageNumber.innerHTML = `${pageIndex + 1}`;
 
 	} else if (window.innerWidth <= 1200) {
 		maxPageIndex = 7;
 		cardsPerPageCount = 6;
-		pageIndex = maxPageIndex;
-		pageNumber.innerHTML = `${pageIndex + 1}`;
 
 	} else {
 		maxPageIndex = 5;
 		cardsPerPageCount = 8;
-		pageIndex = maxPageIndex;
-		pageNumber.innerHTML = `${pageIndex + 1}`;
 	}
 
 	if (prevCardsPerPageCount !== cardsPerPageCount) {
+
+		pageIndex = 0;
+		pageNumber.innerHTML = `${pageIndex + 1}`;
+		disableBtn(pgBtnLeft);
+		disableBtn(pgBtnToFirst);
+		enableBtn(pgBtnRight);
+		enableBtn(pgBtnToLast);
+
 		chunkedPetCardsSet = getChunks(fullPetCardsSet, cardsPerPageCount);
 		insertPetCardHtml(pageIndex);
 
