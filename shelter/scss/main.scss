@@ -775,7 +775,6 @@ body {
 			width: 900px;
 			height: 500px;
 			background-color: #fff;
-			gap: 30px;
 			border-radius: 15px;
 		}
 	}
@@ -788,6 +787,8 @@ body {
 
 	&__content {
 		width: 351px;
+		padding-left: 30px;
+		padding-right: 20px;
 	}
 
 	&__title {
@@ -941,8 +942,52 @@ body {
 		}
 	}
 
-	.paginator {
+	.pet-modal {
 
+		&.open {
+			width: 682px;
+			height: 402px;
+		}
+
+		&__container {
+
+			&.open {
+				width: 630px;
+				height: 350px;
+			}
+		}
+
+		&__image {
+			width: 350px;
+			height: 350px;
+		}
+
+		&__content {
+			width: 280px;
+			padding: 9px
+		}
+
+		&__title {
+			padding: 0
+		}
+
+		&__subtitle {
+			padding-top: 10px;
+			padding-bottom: 20px;
+		}
+
+		&__paragraph {
+			font-size: 13px;
+			padding-bottom: 17px;
+			line-height: 14.3px;
+		}
+
+		&__list-item {
+			padding-bottom: 6px;
+		}
+	}
+
+	.paginator {
 		padding-bottom: 0px;
 		padding-top: 10px;
 	}
@@ -1109,7 +1154,6 @@ body {
 			}
 
 			&_pets-page {
-
 				border-top: 2px solid black;
 				border-bottom: 2px solid black;
 
@@ -1215,12 +1259,71 @@ body {
 		display: none;
 	}
 
+	.pet-modal {
+
+		&.open {
+			width: 270px;
+			height: 393px;
+		}
+
+		&__container {
+
+			&.open {
+				width: 240px;
+				height: 341px;
+			}
+		}
+
+		&__image {
+			display: none;
+		}
+
+		&__content {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		&__title {
+			font-size: map-get($font-sizes, header-3);
+			line-height: 45px;
+			text-align: center;
+			padding: 0;
+		}
+
+		&__subtitle {
+			text-align: center;
+			padding: 0;
+			justify-self: flex-start;
+		}
+
+		&__paragraph {
+			text-align: justify;
+			padding: 0;
+		}
+	}
+
+	.modal-close-btn {
+		margin-right: 0px;
+	}
+
+
 	.pg-button {
 
 		&_in-slider {
 			margin-top: 20px;
 			margin-left: 10px;
 			margin-right: 10px;
+		}
+	}
+
+	.paginator {
+
+		padding-top: 45px;
+
+		&__item {
+			margin-left: 5px;
+			margin-right: 5px;
 		}
 	}
 
@@ -1362,16 +1465,6 @@ body {
 
 		&__text {
 			max-width: 95%;
-		}
-	}
-
-	.paginator {
-
-		padding-top: 45px;
-
-		&__item {
-			margin-left: 5px;
-			margin-right: 5px;
 		}
 	}
 
