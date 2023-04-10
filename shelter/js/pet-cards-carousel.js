@@ -4,6 +4,7 @@ const leftCarouselButton = document.getElementById('left-carousel-button');
 
 const petModal = document.getElementById('pet-modal');
 const petModalContainer = document.getElementById('pet-modal-container');
+const modalCloseBtn = document.querySelector('.modal-close-btn');
 const overlay = document.querySelector('.overlay');
 const html = document.querySelector('html');
 
@@ -79,8 +80,32 @@ function openPetCardModal() {
 	petModalContainer.classList.add('open')
 	overlay.classList.add('open')
 	html.classList.add('stop-scroll');
-	console.log('modal opens')
 }
+
+function closePetCardModal() {
+	petModal.classList.remove('open')
+	petModalContainer.classList.remove('open')
+	overlay.classList.remove('open')
+	html.classList.remove('stop-scroll');
+}
+
+modalCloseBtn.addEventListener('click', (event) => {
+	closePetCardModal()
+});
+
+overlay.addEventListener('click', (event) => {
+	const withinBoundaries = event.composedPath().includes(petModalContainer);
+	if (!withinBoundaries) {
+		closePetCardModal()
+	};
+});
+
+petModal.addEventListener('click', (event) => {
+	const withinBoundaries = event.composedPath().includes(petModalContainer);
+	if (!withinBoundaries) {
+		closePetCardModal()
+	};
+});
 
 function insertPetCardHtml(petCardIndex) {
 	let cardObj = petCardsData[petCardIndex]
