@@ -750,25 +750,40 @@ body {
 
 .pet-modal {
 
+	display: none;
+
+	&.open {
+		position: fixed;
+		display: flex;
+		left: 50%;
+		right: 50%;
+		top: 50%;
+		width: 952px;
+		height: 552px;
+		transform: translate(-50%, -50%);
+		z-index: 9999;
+	}
+
 	&__container {
 		display: none;
 
 		&.open {
-			display: flex;
 			position: absolute;
+			display: flex;
+			bottom: 0px;
+			left: 0px;
 			width: 900px;
 			height: 500px;
-
-			background-color: $color-light-s;
+			background-color: #fff;
 			gap: 30px;
-			border-radius: 10px;
+			border-radius: 15px;
 		}
 	}
 
 	&__image {
 		width: 500px;
 		height: 500px;
-		border-radius: 15px 0px 0px 15px;
+		border-radius: 15px
 	}
 
 	&__content {

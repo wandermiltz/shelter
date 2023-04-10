@@ -575,22 +575,38 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.pet-modal {
+  display: none;
+}
+.pet-modal.open {
+  position: fixed;
+  display: flex;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  width: 952px;
+  height: 552px;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
 .pet-modal__container {
   display: none;
 }
 .pet-modal__container.open {
-  display: flex;
   position: absolute;
+  display: flex;
+  bottom: 0px;
+  left: 0px;
   width: 900px;
   height: 500px;
-  background-color: #FAFAFA;
+  background-color: #fff;
   gap: 30px;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 .pet-modal__image {
   width: 500px;
   height: 500px;
-  border-radius: 15px 0px 0px 15px;
+  border-radius: 15px;
 }
 .pet-modal__content {
   width: 351px;

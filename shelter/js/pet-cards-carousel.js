@@ -1,7 +1,11 @@
 const petCardsContainer = document.getElementById('pet-cards-carousel');
-const petModalContainer = document.getElementById('pet-modal-container');
 const rightCarouselButton = document.getElementById('right-carousel-button');
 const leftCarouselButton = document.getElementById('left-carousel-button');
+
+const petModal = document.getElementById('pet-modal');
+const petModalContainer = document.getElementById('pet-modal-container');
+const overlay = document.querySelector('.overlay');
+const html = document.querySelector('html');
 
 async function getPetCardsData() {
 	const petCards = './data/pet-cards.json';
@@ -77,7 +81,10 @@ async function insertPetCardHtml(petCardIndex) {
 
 	let currentCard = document.getElementById(cardObj.name)
 	currentCard.addEventListener('click', (e) => {
+		petModal.classList.add('open')
 		petModalContainer.classList.add('open')
+		overlay.classList.add('open')
+		html.classList.add('stop-scroll');
 		console.log('modal opens')
 		let petModalHtml = generatePetCardModalHtml(cardObj)
 		petModalContainer.innerHTML = petModalHtml
