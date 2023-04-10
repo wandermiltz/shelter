@@ -1,7 +1,11 @@
 const petCardsContainer = document.getElementById('pet-cards-carousel');
-const petModalContainer = document.getElementById('pet-modal-container');
 const rightCarouselButton = document.getElementById('right-carousel-button');
 const leftCarouselButton = document.getElementById('left-carousel-button');
+
+const petModal = document.getElementById('pet-modal');
+const petModalContainer = document.getElementById('pet-modal-container');
+const overlay = document.querySelector('.overlay');
+const html = document.querySelector('html');
 
 async function getPetCardsData() {
 	const petCards = './data/pet-cards.json';
@@ -32,11 +36,13 @@ function generatePetCardHtml(cardObj) {
 }
 
 function generatePetCardModalHtml(cardObj) {
+
 	let name = cardObj.name;
 	let img = cardObj.img;
 	let type = cardObj.type;
 	let breed = cardObj.breed;
 	let age = cardObj.age
+	let description = cardObj.description
 	let inoculations = cardObj.inoculations
 	let diseases = cardObj.diseases
 	let parasites = cardObj.parasites
@@ -48,6 +54,7 @@ function generatePetCardModalHtml(cardObj) {
 					<span>${type}</span> - <span>${breed}</span>
 				</div>
 				<div class="pet-modal__paragraph header-5">
+				${description}
 				</div>
 				<ul class="pet-modal__list header-5">
 					<li class="pet-modal__list-item">
@@ -74,7 +81,10 @@ async function insertPetCardHtml(petCardIndex) {
 
 	let currentCard = document.getElementById(cardObj.name)
 	currentCard.addEventListener('click', (e) => {
+		petModal.classList.add('open')
 		petModalContainer.classList.add('open')
+		overlay.classList.add('open')
+		html.classList.add('stop-scroll');
 		console.log('modal opens')
 		let petModalHtml = generatePetCardModalHtml(cardObj)
 		petModalContainer.innerHTML = petModalHtml
