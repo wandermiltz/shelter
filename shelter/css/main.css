@@ -602,6 +602,10 @@ body {
   height: 500px;
   background-color: #fff;
   border-radius: 15px;
+  transition: 0.5s;
+}
+.pet-modal__container:hover {
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.2);
 }
 .pet-modal__image {
   width: 500px;
