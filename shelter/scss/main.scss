@@ -81,6 +81,7 @@ body {
 	padding-right: 40px;
 }
 
+
 .background {
 
 	&__start_dark {
@@ -98,6 +99,25 @@ body {
 	&_light {
 		background: $color-light-l;
 	}
+}
+
+.darken {
+	display: none;
+	position: absolute;
+	z-index: 200;
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+
+	&_active {
+		display: block;
+	}
+}
+
+.stop-scroll {
+	overflow-y: hidden;
 }
 
 .header-2 {
@@ -276,6 +296,7 @@ body {
 }
 
 .navigation {
+	z-index: 10;
 
 	&__list {
 		display: flex;
@@ -427,12 +448,14 @@ body {
 	}
 
 	&__button {
-		padding-top: 30px;
 		padding-bottom: 24px;
+		justify-self: flex-end;
 	}
 }
 
 .pet-cards {
+
+	overflow: hidden;
 
 	&__container {
 		display: flex;
@@ -440,10 +463,29 @@ body {
 		justify-content: space-between;
 		align-content: space-between;
 		padding-top: 60px;
+		min-height: 555px;
+	}
+}
+
+@keyframes pet-card {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
+
+	100% {
+		opacity: 1;
 	}
 }
 
 .pet-card {
+
+	animation-name: pet-card;
+	animation-duration: 1s;
+	animation-timing-function: linear;
 
 	&__container {
 		display: flex;
@@ -488,7 +530,7 @@ body {
 	}
 }
 
-.pagination-button {
+.pg-button {
 
 	display: flex;
 	justify-content: center;
@@ -498,11 +540,8 @@ body {
 	border-style: solid;
 	border-width: 2px;
 	border-radius: 50px;
+	background-color: transparent;
 	transition: 0.5s;
-
-	&_in-slider {
-		margin-top: 30px;
-	}
 
 	&_normal {
 		border-color: $color-primary;
@@ -525,9 +564,10 @@ body {
 		}
 	}
 
-	&_inactive {
+	&_disabled {
 		color: $color-dark-s;
 		border-color: $color-dark-s;
+
 	}
 
 	&__arrow {
@@ -688,6 +728,95 @@ body {
 	&__img {
 		width: 300px;
 		height: 310px;
+	}
+}
+
+.overlay {
+
+	display: none;
+
+	&.open {
+		display: block;
+		position: fixed;
+		overflow: auto;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+}
+
+
+.pet-modal {
+
+	display: none;
+
+	&.open {
+		position: fixed;
+		display: flex;
+		left: 50%;
+		right: 50%;
+		top: 50%;
+		width: 952px;
+		height: 552px;
+		transform: translate(-50%, -50%);
+		z-index: 9999;
+	}
+
+	&__container {
+		display: none;
+
+		&.open {
+			position: absolute;
+			display: flex;
+			bottom: 0px;
+			left: 0px;
+			width: 900px;
+			height: 500px;
+			background-color: #fff;
+			gap: 30px;
+			border-radius: 15px;
+		}
+	}
+
+	&__image {
+		width: 500px;
+		height: 500px;
+		border-radius: 15px
+	}
+
+	&__content {
+		width: 351px;
+	}
+
+	&__title {
+		padding-top: 50px;
+	}
+
+	&__subtitle {
+		padding-top: 10px;
+		padding-bottom: 40px;
+	}
+
+	&__paragraph {
+		color: black;
+		padding-bottom: 40px;
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		padding-left: 15px;
+	}
+
+	&__list-item {
+		color: $color-primary;
+		padding-bottom: 10px;
+
+		span {
+			color: black;
+		}
 	}
 }
 
@@ -862,11 +991,6 @@ body {
 		font-size: 25px;
 	}
 
-	.navigation {
-
-		display: none;
-	}
-
 	.header {
 
 		&__container {
@@ -875,17 +999,83 @@ body {
 		}
 	}
 
-	.burger {
+	.navigation {
 
-		display: block;
-		width: 30px;
-		height: 22px;
-		cursor: pointer;
-		background: url("../assets/icons/burger.svg") no-repeat center;
-		align-self: center;
+		&__list {
 
-		&_pets-page {
-			background: url("../assets/icons/burger-black.svg") no-repeat center;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			min-width: fit-content;
+			max-width: 320px;
+			position: fixed;
+			top: 0;
+			margin: 0;
+			padding-top: 210px;
+			padding-right: 55px;
+			padding-bottom: 210px;
+			min-height: 100vh;
+			transform: translateX(100%);
+			transition: transform 1s;
+			background-color: $color-dark-3xl;
+
+			&_active {
+				transform: translateX(-80%);
+			}
+
+			&_pets-page {
+				background-color: #fff;
+			}
+		}
+
+		&__item {
+			margin-top: 40px;
+			padding: 0;
+		}
+
+		&__link {
+			font-size: 32px;
+			white-space: nowrap;
+		}
+
+		&__burger {
+
+			display: block;
+			position: relative;
+			width: 30px;
+			height: 22px;
+			top: 20px;
+			right: 0;
+			z-index: 10;
+			border-top: 2px solid $color-primary;
+			border-bottom: 2px solid $color-primary;
+			cursor: pointer;
+			transition: 0.5s;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 8px;
+				left: 0px;
+				width: 100%;
+				height: 2px;
+				background-color: $color-primary;
+				transition: 0.5s;
+			}
+
+			&_active {
+				transform: rotate(90deg);
+			}
+
+			&_pets-page {
+
+				border-top: 2px solid black;
+				border-bottom: 2px solid black;
+
+				&::before {
+					background-color: black;
+				}
+			}
 		}
 	}
 
@@ -941,8 +1131,9 @@ body {
 		}
 
 		&__slider {
+			width: 90%;
 			flex-wrap: wrap;
-			justify-content: space-evenly;
+			justify-content: space-around;
 		}
 
 		&__button {
@@ -961,7 +1152,7 @@ body {
 	.pet-cards {
 
 		&__container {
-
+			min-height: 495px;
 			justify-content: center;
 			padding-top: 42px;
 
@@ -983,7 +1174,7 @@ body {
 		display: none;
 	}
 
-	.pagination-button {
+	.pg-button {
 
 		&_in-slider {
 			margin-top: 20px;
