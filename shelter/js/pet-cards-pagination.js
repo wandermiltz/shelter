@@ -100,17 +100,21 @@ function getChunks(array, chunkSize) {
 	return result;
 }
 
+function openPetCardModal() {
+	petModal.classList.add('open')
+	petModalContainer.classList.add('open')
+	overlay.classList.add('open')
+	html.classList.add('stop-scroll');
+	console.log('modal opens')
+}
+
 function insertPetCardHtml(pageIndex) {
 	petCardsContainer.innerHTML = chunkedPetCardsSet[pageIndex].map(pet => generatePetCardHtml(pet)).join('');
 
 	chunkedPetCardsSet[pageIndex].forEach(cardObj => {
 		let currentCard = document.getElementById(cardObj.name)
 		currentCard.addEventListener('click', (e) => {
-			petModal.classList.add('open')
-			petModalContainer.classList.add('open')
-			overlay.classList.add('open')
-			html.classList.add('stop-scroll');
-			console.log('modal opens')
+			openPetCardModal()
 			let petModalHtml = generatePetCardModalHtml(cardObj)
 			petModalContainer.innerHTML = petModalHtml
 		})

@@ -74,18 +74,22 @@ function generatePetCardModalHtml(cardObj) {
 	return petCardModalHtml;
 }
 
-async function insertPetCardHtml(petCardIndex) {
+function openPetCardModal() {
+	petModal.classList.add('open')
+	petModalContainer.classList.add('open')
+	overlay.classList.add('open')
+	html.classList.add('stop-scroll');
+	console.log('modal opens')
+}
+
+function insertPetCardHtml(petCardIndex) {
 	let cardObj = petCardsData[petCardIndex]
 	let petCardHtml = generatePetCardHtml(cardObj);
 	petCardsContainer.insertAdjacentHTML('afterbegin', petCardHtml);
 
 	let currentCard = document.getElementById(cardObj.name)
 	currentCard.addEventListener('click', (e) => {
-		petModal.classList.add('open')
-		petModalContainer.classList.add('open')
-		overlay.classList.add('open')
-		html.classList.add('stop-scroll');
-		console.log('modal opens')
+		openPetCardModal()
 		let petModalHtml = generatePetCardModalHtml(cardObj)
 		petModalContainer.innerHTML = petModalHtml
 	})
